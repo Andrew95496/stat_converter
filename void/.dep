@@ -1,0 +1,43 @@
+COMPLETED_STATS = ( 'General Takedown' : ('clGTD','GTD', 'GTDch')
+                    'General Takedown Against' : ('clGTDag', 'GTDag', 'GTDchag'),
+                    
+                    'Foot Sweep' : ('clFSW', 'FSW'), 
+                    'Foot Sweep Against': ('clFSWag', 'FSWag'),
+
+                    'Single Leg Takedown' : ('clSLTD', 'SLTD')
+                    'Single Leg Takedown Against' : ('clSLTDag', 'SLTDag')
+                    
+                    'Double Leg Takedown' : ('clDLTD', 'DLTD'),
+                    'Double Leg Takedown Against' : ('clDLTDag', 'DLTDag'),
+                    
+                    'Throw' : ('clTh','Th'),
+                    'Throw Against' : ('clThag','Thag'),
+
+                    'Counter' : ('clC', 'C'),
+                    'Counter Against' : ('clCag', 'Cag'),
+                
+                    'Guard Pass' : ('GP', 'GPch' ),
+                    'Guard Pass Against' : ('GPag',  'GPchag'),
+
+                    'Sweep' : ('clSw', 'Sw',   'clSwch', 'Swch'),
+                    'Sweep Against' : ('clSwag', 'Swag', 'clSwchag', 'Swchag'),
+
+                    'Leg Entanglement' : ('TdLEE', 'GPLEE', 'GULEE', 'PosLEE', 'TdLEEch', 'GPLEEch', 'GULEEch', 'PosLEEch' ),
+                    'Leg Entanglement Against' : ('TdLEEag', 'GPLEEag', 'GULEEag', 'PosLEEag', 'TdLEEchag', 'GPLEEchag', 'GULEEchag', 'PosLEEchag'),
+
+                    'Position Escape' : ('clPE', 'PE'),
+                    'Position Escape' : ('clPEag','PEag'),
+                    
+                    'TdSub', 'GPSub', 'GUSub', 'PosSub', 'TdSubag', 'GPSubag', 'GUSubag', 'PosSubag',
+
+                    'TdctSub', 'GPctSub', 'GUctSub', 'PosctSub', 'TdctSubag', 'GPctSubag', 'GUctSubag', 'PosctSubag',
+
+                    'TdSubch', 'GPSubch', 'GUSubch', 'PosSubch', 'TdSubchag', 'GPSubchag', 'GUSubchag', 'PosSubchag',
+                    
+                    'GUfSU', 'PosfSu', 'GUfSUag', 'PosfSuag',
+                    
+                    'TdR' 'PosR', 'TdRag', 'PosRag',
+                    
+                #   |                            Back Take                                 |
+                    'TdBt', 'GPBt', 'GUBt', 'PosBt', 'TdBtag', 'GPBtag', 'GUBtag', 'PosBtag'
+)

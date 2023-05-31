@@ -1,0 +1,57 @@
+aiohttp @ file:///Users/runner/miniforge3/conda-bld/aiohttp_1676292794306/work
+aiosignal @ file:///home/conda/feedstock_root/build_artifacts/aiosignal_1667935791922/work
+async-timeout @ file:///home/conda/feedstock_root/build_artifacts/async-timeout_1640026696943/work
+attrs @ file:///home/conda/feedstock_root/build_artifacts/attrs_1683424013410/work
+autopep8 @ file:///opt/conda/conda-bld/autopep8_1650463822033/work
+bitarray @ file:///Users/runner/miniforge3/conda-bld/bitarray_1677415534954/work
+Bottleneck @ file:///Users/ec2-user/ci_py311/bottleneck_1678322312632/work
+certifi @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b64zphacdv/croot/certifi_1683875375103/work/certifi
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+cytoolz @ file:///Users/runner/miniforge3/conda-bld/cytoolz_1666829708557/work
+et-xmlfile==1.1.0
+eth-abi @ file:///home/conda/feedstock_root/build_artifacts/eth-abi_1679598323620/work
+eth-account @ file:///home/conda/feedstock_root/build_artifacts/eth-account_1682635474507/work
+eth-hash @ file:///home/conda/feedstock_root/build_artifacts/eth-hash_1668036841030/work
+eth-keyfile @ file:///home/conda/feedstock_root/build_artifacts/eth-keyfile_1677686073380/work
+eth-keys @ file:///home/conda/feedstock_root/build_artifacts/eth-keys_1678493914753/work
+eth-rlp @ file:///home/conda/feedstock_root/build_artifacts/eth-rlp_1643212579868/work
+eth-typing @ file:///home/conda/feedstock_root/build_artifacts/eth-typing_1678386483595/work
+eth-utils @ file:///Users/runner/miniforge3/conda-bld/eth-utils_1678300826308/work
+frozenlist @ file:///Users/runner/miniforge3/conda-bld/frozenlist_1667935707665/work
+hexbytes @ file:///home/conda/feedstock_root/build_artifacts/hexbytes_1663600986137/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1663625384323/work
+importlib-metadata @ file:///home/conda/feedstock_root/build_artifacts/importlib-metadata_1682176699712/work
+importlib-resources @ file:///home/conda/feedstock_root/build_artifacts/importlib_resources_1676919000169/work
+jsonschema @ file:///home/conda/feedstock_root/build_artifacts/jsonschema-meta_1669810440410/work
+lru-dict @ file:///Users/runner/miniforge3/conda-bld/lru-dict_1667062157381/work
+mkl-fft==1.3.6
+mkl-random @ file:///Users/ec2-user/mkl/mkl_random_1682994911338/work
+mkl-service==2.4.0
+multidict @ file:///Users/runner/miniforge3/conda-bld/multidict_1672339475162/work
+numexpr @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_1b50c1js9s/croot/numexpr_1683227065029/work
+numpy @ file:///Users/ec2-user/mkl/numpy_and_numpy_base_1682973769567/work
+openpyxl==3.0.10
+pandas==1.5.3
+parsimonious @ file:///home/conda/feedstock_root/build_artifacts/parsimonious_1662507967392/work
+pkgutil_resolve_name @ file:///home/conda/feedstock_root/build_artifacts/pkgutil-resolve-name_1633981968097/work
+protobuf==4.23.2
+pycodestyle @ file:///Users/ec2-user/ci_py311/pycodestyle_1678324331308/work
+pycryptodome @ file:///Users/runner/miniforge3/conda-bld/pycryptodome_1684532195930/work
+pyrsistent @ file:///Users/runner/miniforge3/conda-bld/pyrsistent_1672681602414/work
+PySocks @ file:///home/conda/feedstock_root/build_artifacts/pysocks_1661604839144/work
+python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+pytz @ file:///Users/ec2-user/ci_py311/pytz_1678318034461/work
+regex @ file:///Users/runner/miniforge3/conda-bld/regex_1683147195735/work
+requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1684774241324/work
+rlp @ file:///home/conda/feedstock_root/build_artifacts/rlp_1639254711263/work
+setup-py-upgrade==1.3.0
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+toml @ file:///tmp/build/80754af9/toml_1616166611790/work
+toolz @ file:///home/conda/feedstock_root/build_artifacts/toolz_1657485559105/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1685045523825/work
+urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1683161174614/work
+VOID @ file:///Users/drewskikatana/Documents/Programming/jiu_jistics
+web3 @ file:///Users/runner/miniforge3/conda-bld/web3_1683228430880/work
+websockets @ file:///Users/runner/miniforge3/conda-bld/websockets_1683550264809/work
+yarl @ file:///Users/runner/miniforge3/conda-bld/yarl_1685191791125/work
+zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1677313463193/work
