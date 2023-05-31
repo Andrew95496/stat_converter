@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-from jiu_jistics import VOID
+from void import VOID
 
-void = VOID()
+void = VOID.VOID()
 
 def run():
     void.get_tables()

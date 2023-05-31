@@ -1,5 +1,5 @@
-import configs
 import modules
+import configs
 
 import os
 
@@ -25,7 +25,8 @@ class VOID():
 
     def get_tables(self):
         for athlete in configs.ATHLETES:
-            dataframe = modules.FileImporter(athlete, f'{athlete}{configs.SHEET_NAME}', f'{configs.LOAD_DIR}{athlete}.xlsx')
+            dataframe = modules.FileImporter(
+                athlete, f'{athlete}{configs.SHEET_NAME}', f'{configs.LOAD_DIR}{athlete}.xlsx')
             dataframe = dataframe.import_excel()
             self.tables[athlete] = (dataframe)
         return self.tables
@@ -36,8 +37,8 @@ class VOID():
             athlete = athlete.replace('_', ' ')
             for table in dataframes:
                 stats = modules.stat_type.StatType()
-                print(
-                    f'\n{modules.bcolors.BOLD}{modules.bcolors.HEADER}{athlete.capitalize()}{modules.bcolors.ENDC}\n')
+                # print(
+                #     f'\n{modules.bcolors.BOLD}{modules.bcolors.HEADER}{athlete.capitalize()}{modules.bcolors.ENDC}\n')
                 stat_col = stats.assign_type(table['Stats'])
                 self.parsed_stats[f'{athlete}_{count}'] = stat_col
                 count += 1
@@ -50,8 +51,8 @@ class VOID():
             convert._change_suffix()
             convert._change_direction()
             convert._change_postion()
-            for stat in stat_col:
-                print(stat.__str__())
+            # for stat in stat_col:
+            #     print(stat.__str__())
 
 
 

@@ -1,1 +1,1 @@
-from jiu_jistics import VOID
+from void import VOID

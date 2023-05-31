@@ -92,7 +92,7 @@ class StatType():
             is_attempt = StatType.__is_completed(_stat)
 
             __stat__ = Stat(prev_stat, full_stat, type, direction, position, prefixes, stat, suffixes, is_attempt)
-            print(__stat__.__str__())
+            # print(__stat__.__str__())
             stat_obj_list.append(__stat__)
             prev_stat = _stat
         return stat_obj_list
