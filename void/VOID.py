@@ -11,7 +11,10 @@ import os
 # athlete: str | None = None, opponent: str | None = None, time: list[str] = None
 class VOID():
 
-    def __init__(self, tables: list[dict] | None = None, parsed_stats: list[dict] | None = None) -> None:
+    def __init__(self, import_dir = configs.IMPORT_DIR, sheet_name = configs.SHEET_NAME, athletes: list[str] = configs.ATHLETES, tables: list[dict] | None = None, parsed_stats: list[dict] | None = None) -> None:
+        self.import_dir = import_dir
+        self.sheet_name = sheet_name
+        self.athletes = athletes
         if tables is None:
             self.tables = {}
         if parsed_stats is None:
@@ -24,9 +27,9 @@ class VOID():
 
 
     def get_tables(self):
-        for athlete in configs.ATHLETES:
+        for athlete in self.athletes:
             dataframe = modules.FileImporter(
-                athlete, f'{athlete}{configs.SHEET_NAME}', f'{configs.LOAD_DIR}{athlete}.xlsx')
+                athlete, f'{athlete}{self.sheet_name}', f'{self.import_dir}{athlete}.xlsx')
             dataframe = dataframe.import_excel()
             self.tables[athlete] = (dataframe)
         return self.tables

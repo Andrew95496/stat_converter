@@ -1,1 +1,1 @@
-from void import VOID
+from .void import VOID
