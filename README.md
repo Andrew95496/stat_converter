@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://jiujistics.netlify.app/">
-    <img src="README_img/void-logo-1.jpg" alt="Logo" width="100" height="100">
+    <img src="docs/README_img/void-logo-1.jpg" alt="Logo" width="100" height="100">
   </a>
 
 <h2 align="center">VOID</h2>
@@ -48,7 +48,8 @@
 
  [![Python][Python]][Python-url]
  [![Python][Pandas]][Pandas-url]
- [![Numpy][Numpy]][Pandas-url]
+ [![Numpy][Numpy]][Numpy-url]
+ [![Docker][Docker]][Docker-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -155,3 +156,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 [Numpy]: https://img.shields.io/badge/Numpy-20232A?style=for-the-badge&logo=Numpy&logoColor=61DAFB
 [Numpy-url]: https://numpy.org/
+
+[Docker]: https://img.shields.io/badge/docker-20232A?style=for-the-badge&logo=Docker&logoColor=61DAFB
+[Docker-url]: #
