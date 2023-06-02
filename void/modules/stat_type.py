@@ -22,39 +22,39 @@ class StatType():
 
 
     @staticmethod
-    def __assign__types(stat: str) -> str:
+    def __type__(stat: str) -> str:
         for base_stat in ALL_STATS['Base Stats']:
             if base_stat in stat:
-                stat = base_stat
-        
-        for key, types_list in TYPES.items():
+                stat = base_stat # Find the base_stat that matches the stat param (L)GPa = GP  stat = GP
+                
+        for key, types_list in TYPES.items(): # SEE statics.py
             for stat_ in types_list:
-                if stat_ == stat:
+                if stat_ == stat: 
                     return key
 
         
 
     @staticmethod
-    def __assign_direction(stat: str) -> str | None:
-        return stat[1] if stat not in NO_DIRECTION else None
+    def __direction__(stat: str) -> str:
+        return stat[1] if stat not in NO_DIRECTION else ''
 
     @staticmethod
-    def __assign_position(stat: str) -> str | None:
+    def __position__(stat: str) -> str:
         for position_stat in ALL_STATS['Position Types']:
             if position_stat in stat:
                 return position_stat
-        return None
+        return ''
 
     @staticmethod
-    def __assign_prefix(stat: str) -> str | None:
+    def __prefix__(stat: str) -> str:
         for prefix in ALL_STATS['Execution Prefix']:
             if prefix in stat:
                 return prefix
-        return None
+        return ''
         
 
     @staticmethod
-    def __assign__stat(stat: str) -> str:
+    def __stat__(stat: str) -> str:
         for base_stat in ALL_STATS['Base Stats']:
             if base_stat in stat:
                 return base_stat
@@ -63,17 +63,17 @@ class StatType():
 
     @staticmethod
     # TODO: Adds 'a' to suffix_list with stats ending only in 'ag' ex: (L)GpLEEag -> suffix_list = ['a', 'ag'] NEEDS FIX
-    def __assign__suffix(stat: str):
+    def __suffix__(stat: str):
         suffix_list: list = []
         for suffix in ALL_STATS['Execution Suffix']:
             if suffix in stat:
-                suffix_list.append(f'{suffix}O:=')
+                suffix_list.append(suffix)
         return suffix_list
 
 
 
     @staticmethod
-    def __is_completed(stat: str) -> bool:
+    def __completed__(stat: str) -> bool:
         return True if stat.endswith('a') else False
             
 
@@ -83,13 +83,13 @@ class StatType():
         prev_stat = None
         for _stat in stat_list:
             full_stat = _stat
-            type = StatType.__assign__types(_stat)
-            direction = StatType.__assign_direction(_stat)
-            position = StatType.__assign_position(_stat)
-            prefixes = StatType.__assign_prefix(_stat)
-            stat = StatType.__assign__stat(_stat)
-            suffixes = StatType.__assign__suffix(_stat)
-            is_attempt = StatType.__is_completed(_stat)
+            type = StatType.__type__(_stat)
+            direction = StatType.__direction__(_stat)
+            position = StatType.__position__(_stat)
+            prefixes = StatType.__prefix__(_stat)
+            stat = StatType.__stat__(_stat)
+            suffixes = StatType.__suffix__(_stat)
+            is_attempt = StatType.__completed__(_stat)
 
             __stat__ = Stat(prev_stat, full_stat, type, direction, position, prefixes, stat, suffixes, is_attempt)
             # print(__stat__.__str__())
