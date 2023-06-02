@@ -4,3 +4,4 @@ from .imports import FileImporter
 from .stat_object import Stat
 from .stat_type import Stat
 from .statics import *
+from .stat_logger import StatLogger

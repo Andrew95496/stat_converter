@@ -7,12 +7,15 @@ class ErrorTypes():
         match case:
             case 10:
                 print(f'{bc.FAIL}{stat} NEEDS PREVIOUS ATTEMPT{bc.ENDC}')
+                return '{bc.FAIL}{stat} NEEDS PREVIOUS ATTEMPT{bc.ENDC}'
             case 11:
                 print(f'{bc.FAIL}{stat} IS AN INVALID STAT{bc.ENDC}')
+                return f'{bc.FAIL}{stat} IS AN INVALID STAT{bc.ENDC}'
 
     @staticmethod
     def WARNING(stat: str, case: str) -> None:
         match case:
             case 20:
                 print(f'{bc.WARNING}CHECK {bc.BOLD}{stat}{bc.ENDC}'f'{bc.WARNING} DIRECTION CHANGE, RESULTS MAY NOT BE ACCURATE{bc.ENDC}')
+                return f'{bc.WARNING}CHECK {bc.BOLD}{stat}{bc.ENDC}'f'{bc.WARNING} DIRECTION CHANGE, RESULTS MAY NOT BE ACCURATE{bc.ENDC}'
 

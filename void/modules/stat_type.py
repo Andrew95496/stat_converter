@@ -1,6 +1,7 @@
 from .statics import ALL_STATS, NO_DIRECTION, TYPES
 from .stat_object import Stat
 from .Errors.error_types import ErrorTypes
+from .stat_logger import StatLogger
 
 # '(R)SLTda',
 # '(R)FSwa',
@@ -58,7 +59,9 @@ class StatType():
         for base_stat in ALL_STATS['Base Stats']:
             if base_stat in stat:
                 return base_stat
-        ErrorTypes.ERROR(stat, 11) # Stat was not matched
+        x = ErrorTypes.ERROR(stat, 11)
+        StatLogger(x)
+         # Stat was not matched
         return 'NOT VALID'
 
     @staticmethod
@@ -68,6 +71,7 @@ class StatType():
         for suffix in ALL_STATS['Execution Suffix']:
             if suffix in stat:
                 suffix_list.append(suffix)
+        print(suffix_list)
         return suffix_list
 
 

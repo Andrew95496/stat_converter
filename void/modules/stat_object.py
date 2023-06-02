@@ -3,7 +3,7 @@ from .color_code import bcolors as bc
 
 class Stat():
 
-    def __init__(self, prev_stat: str | bool, full_stat, type: str, direction: str | bool, position: str | bool, prefixes: str, stat: str, suffixes: list, is_attempt) -> str:
+    def __init__(self, prev_stat: str | bool, full_stat, type: str, direction: str | bool, position: str | bool, prefixes: str, stat: str, suffixes: list, is_attempt, flags = None) -> str:
         self.prev_stat = prev_stat
         self.full_stat = full_stat
         self.type = type

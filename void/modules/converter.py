@@ -1,6 +1,7 @@
 # MODULES
 from .statics import CHANGE_DIRECTION, DIRECTION_WARNING, ALL_STATS
 from .Errors.error_types import ErrorTypes
+from .stat_logger import StatLogger
 
 
 # @property
@@ -28,7 +29,8 @@ class Converter():
                         stat_obj.direction = 'L'
         
         if stat_obj.stat in DIRECTION_WARNING:
-            ErrorTypes.WARNING(stat_obj.full_stat, 20)
+            x = ErrorTypes.WARNING(stat_obj.full_stat, 20)
+            StatLogger(x)
 
     @staticmethod
     def __postion__(stat_obj):
@@ -44,8 +46,9 @@ class Converter():
     @staticmethod
     def __suffix__(stat_obj) -> None:
         if 'ag' in stat_obj.suffixes:
+            # print(stat_obj.full_stat, stat_obj.suffixes)
             stat_obj.suffixes.remove('ag')
-        if stat_obj.stat in ALL_STATS['Base Stats'] and stat_obj.stat != 'Scr':
+        elif 'ag' not in stat_obj.suffixes and stat_obj.stat != 'Scr':
             stat_obj.suffixes.append('ag')
 
 
@@ -57,10 +60,14 @@ class Converter():
 
     def merge(self):
         for stat in self.stat_obj_list:
-            suffixes = ''.join(stat.suffixes)
-            new_stat = f'({stat.direction}){stat.position}{stat.prefixes}{stat.stat}{suffixes}'
-            print(stat.full_stat, new_stat)
-            self.converted_stats.append(new_stat)
+            if stat.full_stat == 'Warning' or stat.full_stat == 'Pen':
+                self.converted_stats.append(stat.stat)
+                print(stat.full_stat, '->', stat.full_stat)
+            else:
+                suffixes = ''.join(stat.suffixes)
+                new_stat = f'({stat.direction}){stat.position}{stat.prefixes}{stat.stat}{suffixes}'
+                print(stat.full_stat, '->', new_stat)
+                self.converted_stats.append(new_stat)
         return self.converted_stats
         
     
