@@ -1,12 +1,15 @@
 .
 ├── athletes
 ├── Dockerfile
-├── project_structure
+├── docs
+│  ├── project_structure
+│  └── README_img
+│     └── void-logo-1.jpg
 ├── README.md
-├── README_img
-│  └── void-logo-1.jpg
 ├── requirements.txt
 ├── saves.sh
+├── scripts
+│  └── structure.sh
 ├── setup.cfg
 ├── setup.py
 ├── TODO.md
@@ -64,7 +67,6 @@
    │  ├── stat_object.py
    │  ├── stat_type.py
    │  └── statics.py
-   ├── project_structure
    ├── TEST
    │  ├── test_code
    │  │  └── test.py
