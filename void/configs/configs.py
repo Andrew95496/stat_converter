@@ -5,7 +5,7 @@ import json
 class Config():
 
     config = configparser.ConfigParser()
-    config.read(f'{os.getcwd()}/void/configs/main_configs.cfg')
+    config.read(f'{os.getcwd()}/void/configs/configs.cfg')
     IMPORT_DIR = config['DEFAULTS']['IMPORT_DIR']
     ATHLETES = json.loads(config.get("DEFAULTS", "ATHLETES"))
     SHEET_NAME = config['DEFAULTS']['SHEET_NAME']
