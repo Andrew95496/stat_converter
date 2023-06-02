@@ -1,8 +1,10 @@
-- modules/converter.py:15:    # TODO: Get converter to wok with Stat Object
+- ./docs/project_structure:15:├── TODO.md
 
-- modules/dataflow.md:3: TODO: Add Public/Private
+- ./scripts/todo.sh:1:grep -rn "TODO" ./* | sed 's/^/- /' | sed G > TODO.md | cat TODO.md
 
-- modules/error_check.py:5:# TODO BUG: (L)GPa <- (R)GP would be valid [NOT CORRECT] 
+- ./void/modules/dataflow.md:3:<!-- TODO: Add Public/Private -->
 
-- todo.sh:1:grep -rn "TODO" * | sed 's/^/- /' | sed G > TODO.md | cat TODO.md
+- ./void/modules/error_check.py:5:# TODO BUG: (L)GPa <- (R)GP would be valid [NOT CORRECT] 
+
+- ./void/modules/stat_type.py:68:    # TODO: Adds 'a' to suffix_list with stats ending only in 'ag' ex: (L)GpLEEag -> suffix_list = ['a', 'ag'] NEEDS FIX
 
