@@ -11,7 +11,7 @@ import os
 # athlete: str | None = None, opponent: str | None = None, time: list[str] = None
 class VOID():
 
-    def __init__(self, import_dir = configs.IMPORT_DIR, sheet_name = configs.SHEET_NAME, athletes: list[str] = configs.ATHLETES, tables: list[dict] | None = None, parsed_stats: list[dict] | None = None) -> None:
+    def __init__(self, import_dir=configs.Config.IMPORT_DIR, sheet_name=configs.Config.SHEET_NAME, athletes: list[str] = configs.Config.ATHLETES, tables: list[dict] | None = None, parsed_stats: list[dict] | None = None) -> None:
         self.import_dir = import_dir
         self.sheet_name = sheet_name
         self.athletes = athletes
@@ -51,9 +51,9 @@ class VOID():
     def convert(self):
         for athlete, stat_col in self.parsed_stats.items():
             convert = modules.converter.Converter(stat_col)
-            convert._change_suffix()
-            convert._change_direction()
-            convert._change_postion()
+            convert.convert()
+            convert.merge()
+
             # for stat in stat_col:
             #     print(stat.__str__())
 
