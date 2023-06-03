@@ -2,6 +2,10 @@
 
 - ./scripts/todo.sh:1:grep -rn "TODO" ./* | sed 's/^/- /' | sed G > TODO.md | cat TODO.md
 
+- ./void/configs/configs.cfg:10:# TODO: Update Configs
+
+- ./void/modules/statics.py:30:# TODO: ADD Positions and prefixes to applicable Stats
+
 - ./void/modules/dataflow.md:3:<!-- TODO: Add Public/Private -->
 
 - ./void/modules/error_check.py:5:# TODO BUG: (L)GPa <- (R)GP would be valid [NOT CORRECT] 
