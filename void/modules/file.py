@@ -6,14 +6,14 @@ import pandas as pd
 
 class File():
 
-    def __init__(self, file_name, sheet_name, load_dir):
+    def __init__(self, file_name, sheet_name, import_dir):
         self.file_name = file_name
         self.sheet_name = sheet_name
-        self.load_dir = load_dir
+        self.import_dir = import_dir
 
     def import_excel(self):
         table_list = []
-        workbook = load_workbook(self.load_dir, data_only='True')
+        workbook = load_workbook(self.import_dir, data_only='True')
 
         worksheet = workbook[self.sheet_name]
 
@@ -42,8 +42,8 @@ class File():
             print(
                 f'{bc.HEADER}{bc.BOLD}{self.file_name.capitalize()}{bc.ENDC} ' f'{bc.OKGREEN}{table} Loaded{bc.ENDC}')
             
-        
-    def export_excel(self):
-        
         return table_list
 
+    def export_excel(self, dataframe,opponent_name, export_dir):
+        dataframe.to_excel(f'{export_dir}/{opponent_name}.xlsx')
+        
