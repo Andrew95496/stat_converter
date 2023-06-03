@@ -27,6 +27,7 @@ SPECIAL_STATS = {'PL': {'cPE', 'PR'},
 
 
 # STATS WITH NO (L), (M), (R)
+# TODO: ADD Positions and prefixes to applicable Stats
 NO_DIRECTION = {'PA', 'PT', 'PE', 'PL', 'Pin', 'Pen', 'AlSu',
                 'fSu', 'Scr', 'Bt', 'SCT', 'P', 'Warning'}  # P is Depreciated
 

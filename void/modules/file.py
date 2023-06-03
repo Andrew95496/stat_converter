@@ -4,7 +4,7 @@ from openpyxl import load_workbook
 import pandas as pd
 
 
-class FileImporter():
+class File():
 
     def __init__(self, file_name, sheet_name, load_dir):
         self.file_name = file_name
@@ -41,6 +41,9 @@ class FileImporter():
             self.file_name = self.file_name.replace('_', ' ')
             print(
                 f'{bc.HEADER}{bc.BOLD}{self.file_name.capitalize()}{bc.ENDC} ' f'{bc.OKGREEN}{table} Loaded{bc.ENDC}')
-
+            
+        
+    def export_excel(self):
+        
         return table_list
 

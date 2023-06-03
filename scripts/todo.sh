@@ -1,1 +1,1 @@
-grep -rn "TODO" * | sed 's/^/- /' | sed G > TODO.md | cat TODO.md
+grep -rn "TODO" ./* | sed 's/^/- /' | sed G > TODO.md | cat TODO.md

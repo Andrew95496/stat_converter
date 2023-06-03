@@ -2,6 +2,7 @@
 from .statics import CHANGE_DIRECTION, DIRECTION_WARNING, ALL_STATS
 from .Errors.error_types import ErrorTypes
 from .stat_logger import StatLogger
+from .color_code import bcolors as bc
 
 
 # @property
@@ -60,61 +61,22 @@ class Converter():
 
     def merge(self):
         for stat in self.stat_obj_list:
-            if stat.full_stat == 'Warning' or stat.full_stat == 'Pen':
+            if stat.full_stat in ('Warning', 'Pen', 'NOT VALID'):
                 self.converted_stats.append(stat.stat)
-                print(stat.full_stat, '->', stat.full_stat)
+                print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.OKBLUE}{stat.full_stat}{bc.ENDC}')
             else:
-                suffixes = ''.join(stat.suffixes)
-                new_stat = f'({stat.direction}){stat.position}{stat.prefixes}{stat.stat}{suffixes}'
-                print(stat.full_stat, '->', new_stat)
-                self.converted_stats.append(new_stat)
+                if stat.direction == '':
+                    suffixes = ''.join(stat.suffixes)
+                    new_stat = f'{stat.position}{stat.prefixes}{stat.stat}{suffixes}'
+                    print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.OKBLUE}{new_stat}{bc.ENDC}')
+                    self.converted_stats.append(new_stat)
+                else:
+                    suffixes = ''.join(stat.suffixes)
+                    new_stat = f'({stat.direction}){stat.position}{stat.prefixes}{stat.stat}{suffixes}'
+                    print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}','->', f'{bc.OKBLUE}{new_stat}{bc.ENDC}')
+                    self.converted_stats.append(new_stat)
         return self.converted_stats
         
-    
-if __name__ == '__main__':
 
-    stat_list = ['(L)FSWa',
-                 '(R)FSWa',
-                 '(R)FSWag',
-                 'GUPag',
-                 '(R)GpSubaag',
-                 '(R)GPa',
-                 'GPcha',
-                 '(R)GPch',
-                 'PL',
-                 'Pin',
-                 '(L)GpLEEaag',
-                 'GPcha',
-                 '(L)GPch',
-                 'PosnBt',
-                 'PL',
-                 'Pin',
-                 '(M)GPa',
-                 '(M)GPa',
-                 '(M)GPa',
-                 '(M)GP',
-                 '(R)PosSuba',
-                 'Pin',
-                 'PosfSuaag',
-                 'PosfSuag',
-                 'Sd',
-                 '(M)GTDa',
-                 '(M)GTD',
-                 'GPcha',
-                 '(L)GPa',
-                 '(R)OBag',
-                 '(R)GPa',
-                 '(R)OBag',
-                 '(R) GpLEEaag',
-                 '(R)GpLEEag',
-                 '(R)GpSuba',
-                 '(M)GPaag',
-                 '(M)OB',
-                 'GufSua',
-                 '(L)GSubaag]']
-
-    conv = Converter(stat_obj_list=stat_list)
-
-    conv.convert()
 
     
