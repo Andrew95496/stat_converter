@@ -11,7 +11,8 @@ import os
 # athlete: str | None = None, opponent: str | None = None, time: list[str] = None
 class VOID():
 
-    def __init__(self, import_dir=configs.Config.IMPORT_DIR, sheet_name=configs.Config.SHEET_NAME, athletes: list[str] = configs.Config.ATHLETES, tables: list[dict] | None = None, parsed_stats: list[dict] | None = None) -> None:
+    def __init__(self, dataframe = None, import_dir=configs.Config.IMPORT_DIR, sheet_name=configs.Config.SHEET_NAME, athletes: list[str] = configs.Config.ATHLETES, tables: list[dict] | None = None, parsed_stats: list[dict] | None = None) -> None:
+        self.dataframe = dataframe
         self.import_dir = import_dir
         self.sheet_name = sheet_name
         self.athletes = athletes
@@ -19,48 +20,44 @@ class VOID():
             self.tables = {}
         if parsed_stats is None:
             self.parsed_stats = {}
-        # self.athlete = athlete
-        # self.opponent = opponent
-        # self.time = time
         os.system('bash saves.sh')
 
 
 
     def get_tables(self):
         for athlete in self.athletes:
-            dataframe = modules.FileImporter(
-                athlete, f'{athlete}{self.sheet_name}', f'{self.import_dir}{athlete}.xlsx')
+            dataframe = modules.FileImporter(athlete, f'{athlete}{self.sheet_name}', f'{self.import_dir}{athlete}.xlsx')
             dataframe = dataframe.import_excel()
             self.tables[athlete] = (dataframe)
         return self.tables
     
-    def stat_parse(self):
-        count = 1
-        for athlete, dataframes in self.tables.items():
-            athlete = athlete.replace('_', ' ')
-            for table in dataframes:
-                stats = modules.stat_type.StatType()
-                # print(
-                #     f'\n{modules.bcolors.BOLD}{modules.bcolors.HEADER}{athlete.capitalize()}{modules.bcolors.ENDC}\n')
-                stat_col = stats.assign_type(table['Stats'])
-                self.parsed_stats[f'{athlete}_{count}'] = stat_col
-                count += 1
-        return self.parsed_stats
+    def stat_parse(self,athlete, table):
+        athlete = athlete.replace('_', ' ')
+        stats = modules.stat_type.StatType()
+        stat_col = stats.assign_type(table['Stats'])
+        self.parsed_stats[athlete] = stat_col
 
 
-    def convert(self):
-        for athlete, stat_col in self.parsed_stats.items():
-            convert = modules.converter.Converter(stat_col)
-            convert.convert()
-            convert.merge()
+    def convert(self, stat_col, table):
+        convert = modules.converter.Converter(stat_col)
+        convert.convert()
+        new = convert.merge()
 
-            # for stat in stat_col:
-            #     print(stat.__str__())
+        try:
+            table['Stats '] = new
+            table.fillna("",inplace=True)
+            print(table.iloc[0:, [2, 7, 0, 3, 4, 5, 6]])
+        except ValueError:
+            print('DID NOT WORK')
 
 
 
 if __name__ == '__main__':
     void = VOID()   
-    void.get_tables()
-    void.stat_parse()
-    void.convert()
+    tables = void.get_tables()
+    for athlete, dataframes in tables.items():
+        for table in dataframes:
+            void.stat_parse(athlete, table)
+            for stat_col in void.parsed_stats.values():
+                void.convert(stat_col, table)
+

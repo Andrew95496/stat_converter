@@ -37,7 +37,8 @@ class StatType():
 
     @staticmethod
     def __direction__(stat: str) -> str:
-        return stat[1] if stat not in NO_DIRECTION else ''
+        print(stat)
+        return stat[1] if stat not in NO_DIRECTION and stat[1] in ('L', 'M', 'R') else ''
 
     @staticmethod
     def __position__(stat: str) -> str:
@@ -93,6 +94,10 @@ class StatType():
             stat = StatType.__stat__(_stat)
             suffixes = StatType.__suffix__(_stat)
             is_attempt = StatType.__completed__(_stat)
+
+            if _stat not in NO_DIRECTION and direction == '':
+                print(f'ERROR: YOU DID SOMETHING WRONG {_stat}')
+
 
             __stat__ = Stat(prev_stat, full_stat, type, direction, position, prefixes, stat, suffixes, is_attempt)
             # print(__stat__.__str__())
