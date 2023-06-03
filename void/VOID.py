@@ -25,7 +25,7 @@ class VOID():
 
 
     def get_tables(self, athlete):
-        dataframe = modules.FileImporter(athlete, f'{athlete}{self.sheet_name}', f'{self.import_dir}{athlete}.xlsx')
+        dataframe = modules.File(athlete, f'{athlete}{self.sheet_name}', f'{self.import_dir}{athlete}.xlsx')
         dataframe = dataframe.import_excel()
         self.tables[athlete] = (dataframe)
         return self.tables
