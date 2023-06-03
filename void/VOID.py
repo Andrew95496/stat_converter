@@ -24,40 +24,40 @@ class VOID():
 
 
 
-    def get_tables(self):
-        for athlete in self.athletes:
-            dataframe = modules.FileImporter(athlete, f'{athlete}{self.sheet_name}', f'{self.import_dir}{athlete}.xlsx')
-            dataframe = dataframe.import_excel()
-            self.tables[athlete] = (dataframe)
+    def get_tables(self, athlete):
+        dataframe = modules.FileImporter(athlete, f'{athlete}{self.sheet_name}', f'{self.import_dir}{athlete}.xlsx')
+        dataframe = dataframe.import_excel()
+        self.tables[athlete] = (dataframe)
         return self.tables
     
-    def stat_parse(self,athlete, table):
+    def stat_parse(self,athlete, dataframe):
         athlete = athlete.replace('_', ' ')
         stats = modules.stat_type.StatType()
-        stat_col = stats.assign_type(table['Stats'])
+        stat_col = stats.assign_type(dataframe['Stats'])
         self.parsed_stats[athlete] = stat_col
 
 
-    def convert(self, stat_col, table):
+    def convert(self, stat_col, dataframe):
         convert = modules.converter.Converter(stat_col)
         convert.convert()
         new = convert.merge()
 
         try:
-            table['Stats '] = new
-            table.fillna("",inplace=True)
-            print(table.iloc[0:, [2, 7, 0, 3, 4, 5, 6]])
+            dataframe['Stats '] = new
+            dataframe.fillna("",inplace=True)
+            print('\n', dataframe.iloc[0:, [2, 7, 0, 3, 4, 5, 6]], '\n')
         except ValueError:
             print('DID NOT WORK')
 
 
 
 if __name__ == '__main__':
-    void = VOID()   
-    tables = void.get_tables()
-    for athlete, dataframes in tables.items():
-        for table in dataframes:
-            void.stat_parse(athlete, table)
-            for stat_col in void.parsed_stats.values():
-                void.convert(stat_col, table)
-
+    void = VOID()
+    for athlete in void.athletes:
+        tables = void.get_tables(athlete)
+        for dataframes in tables.values():
+            for dataframe in dataframes:
+                void.stat_parse(athlete, dataframe)
+                for stat_col in void.parsed_stats.values():
+                    void.convert(stat_col, dataframe)
+        void.parsed_stats = {} # Empties the dictionary for the next athlete
