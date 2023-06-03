@@ -58,7 +58,6 @@ class VOID():
             #     print(stat.__str__())
 
 
-
 if __name__ == '__main__':
     void = VOID()   
     void.get_tables()
