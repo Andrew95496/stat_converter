@@ -2,6 +2,7 @@
 from .statics import CHANGE_DIRECTION, DIRECTION_WARNING, ALL_STATS
 from .Errors.error_types import ErrorTypes
 from .stat_logger import StatLogger
+from .color_code import bcolors as bc
 
 
 # @property
@@ -60,13 +61,13 @@ class Converter():
 
     def merge(self):
         for stat in self.stat_obj_list:
-            if stat.full_stat == 'Warning' or stat.full_stat == 'Pen':
+            if stat.full_stat in ('Warning', 'Pen', 'NOT VALID'):
                 self.converted_stats.append(stat.stat)
-                print(stat.full_stat, '->', stat.full_stat)
+                print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.OKBLUE}{stat.full_stat}{bc.ENDC}')
             else:
                 suffixes = ''.join(stat.suffixes)
                 new_stat = f'({stat.direction}){stat.position}{stat.prefixes}{stat.stat}{suffixes}'
-                print(stat.full_stat, '->', new_stat)
+                print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.OKBLUE}{new_stat}{bc.ENDC}')
                 self.converted_stats.append(new_stat)
         return self.converted_stats
         

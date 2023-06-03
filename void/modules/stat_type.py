@@ -71,7 +71,6 @@ class StatType():
         for suffix in ALL_STATS['Execution Suffix']:
             if suffix in stat:
                 suffix_list.append(suffix)
-        print(suffix_list)
         return suffix_list
 
 
