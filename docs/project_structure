@@ -5,11 +5,13 @@
 │  ├── project_structure
 │  └── README_img
 │     └── void-logo-1.jpg
+├── MIT-LICENSE.txt
 ├── README.md
 ├── requirements.txt
 ├── saves.sh
 ├── scripts
-│  └── structure.sh
+│  ├── structure.sh
+│  └── todo.sh
 ├── setup.cfg
 ├── setup.py
 ├── TODO.md
@@ -29,9 +31,8 @@
    │  │  ├── configs.cpython-39.pyc
    │  │  ├── configs.cpython-311.pyc
    │  │  └── main_configs.cpython-311.pyc
-   │  ├── main_configs.cfg
-   │  └── main_configs.py
-   ├── MIT-LICENSE.txt
+   │  ├── configs.cfg
+   │  └── configs.py
    ├── modules
    │  ├── __init__.py
    │  ├── __pycache__
@@ -44,8 +45,10 @@
    │  │  ├── converter.cpython-311.pyc
    │  │  ├── error_types.cpython-39.pyc
    │  │  ├── error_types.cpython-311.pyc
+   │  │  ├── file.cpython-311.pyc
    │  │  ├── imports.cpython-39.pyc
    │  │  ├── imports.cpython-311.pyc
+   │  │  ├── stat_logger.cpython-311.pyc
    │  │  ├── stat_object.cpython-39.pyc
    │  │  ├── stat_object.cpython-311.pyc
    │  │  ├── stat_type.cpython-311.pyc
@@ -63,16 +66,27 @@
    │  │  │  └── error_types.cpython-311.pyc
    │  │  ├── error_codes.md
    │  │  └── error_types.py
-   │  ├── imports.py
+   │  ├── file.py
+   │  ├── stat_logger.py
    │  ├── stat_object.py
    │  ├── stat_type.py
    │  └── statics.py
-   ├── TEST
+   ├── test
    │  ├── test_code
    │  │  └── test.py
-   │  └── test_excel_files
-   │     ├── gordon_ryan.xlsx
-   │     └── kade_ruotolo.xlsx
-   ├── todo.sh
+   │  ├── test_excel_files_export
+   │  │  ├── gordon_ryan_opp_0.xlsx
+   │  │  ├── gordon_ryan_opp_1.xlsx
+   │  │  ├── gordon_ryan_opp_2.xlsx
+   │  │  ├── gordon_ryan_opp_3.xlsx
+   │  │  ├── gordon_ryan_opp_4.xlsx
+   │  │  ├── kade_ruotolo_opp_0.xlsx
+   │  │  ├── kade_ruotolo_opp_1.xlsx
+   │  │  └── kade_ruotolo_opp_2.xlsx
+   │  ├── test_excel_files_import
+   │  │  ├── gordon_ryan.xlsx
+   │  │  └── kade_ruotolo.xlsx
+   │  └── test_logger
+   │     └── flag_log.txt
    ├── void-cli.py
-   └── void.py
+   └── VOID.py
