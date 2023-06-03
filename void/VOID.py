@@ -20,8 +20,7 @@ class VOID():
             self.tables = {}
         if parsed_stats is None:
             self.parsed_stats = {}
-        os.system('bash saves.sh')
-
+            os.system('bash saves.sh')
 
 
     def get_tables(self, athlete):
@@ -35,19 +34,22 @@ class VOID():
         stats = modules.stat_type.StatType()
         stat_col = stats.assign_type(dataframe['Stats'])
         self.parsed_stats[athlete] = stat_col
+        return self.parsed_stats.values()
 
 
     def convert(self, stat_col, dataframe):
         convert = modules.converter.Converter(stat_col)
         convert.convert()
-        new = convert.merge()
+        new_stat_col = convert.merge()
+        dataframe['Stats '] = new_stat_col
+        dataframe.fillna("",inplace=True)
+        print('\n', dataframe.iloc[0:, [2, 7, 0, 3, 4, 5, 6]], '\n')
+        new_dataframe = dataframe.iloc[0:, [2, 7, 0, 3, 4, 5, 6]]
+        return new_dataframe
+      
+    def export(self, df, export_dir, opponent_name):
+        df.to_excel(f'{export_dir}/{opponent_name}.xlsx')
 
-        try:
-            dataframe['Stats '] = new
-            dataframe.fillna("",inplace=True)
-            print('\n', dataframe.iloc[0:, [2, 7, 0, 3, 4, 5, 6]], '\n')
-        except ValueError:
-            print('DID NOT WORK')
 
 
 if __name__ == '__main__':
@@ -55,8 +57,13 @@ if __name__ == '__main__':
     for athlete in void.athletes:
         tables = void.get_tables(athlete)
         for dataframes in tables.values():
+            count = 0
             for dataframe in dataframes:
-                void.stat_parse(athlete, dataframe)
-                for stat_col in void.parsed_stats.values():
-                    void.convert(stat_col, dataframe)
-        void.parsed_stats = {} # Empties the dictionary for the next athlete
+                parsed = void.stat_parse(athlete, dataframe)
+                for stat_col in parsed:
+                    new_dataframe = void.convert(stat_col, dataframe)
+                    void.export(
+                        new_dataframe, '/Users/drewskikatana/Documents/Programming/jiu_jistics/void/test/test_excel_files_export', f'{athlete}_opp_{count}')
+                    count += 1
+
+        void.parsed_stats.clear() # Empties the dictionary for the next athlete
