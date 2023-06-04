@@ -11,9 +11,10 @@ import os
 # athlete: str | None = None, opponent: str | None = None, time: list[str] = None
 class VOID():
 
-    def __init__(self, dataframe = None, import_dir=configs.Config.IMPORT_DIR, sheet_name=configs.Config.SHEET_NAME, athletes: list[str] = configs.Config.ATHLETES, tables: list[dict] | None = None, parsed_stats: list[dict] | None = None) -> None:
+    def __init__(self, dataframe=None, import_dir: str = configs.Config.IMPORT_DIR, export_dir: str = configs.Config.EXPORT_DIR, sheet_name: str = configs.Config.SHEET_NAME, athletes: list[str] = configs.Config.ATHLETES, tables: list[dict] | None = None, parsed_stats: list[dict] | None = None) -> None:
         self.dataframe = dataframe
         self.import_dir = import_dir
+        self.export_dir = export_dir
         self.sheet_name = sheet_name
         self.athletes = athletes
         if tables is None:
@@ -23,13 +24,13 @@ class VOID():
             os.system('bash saves.sh')
 
 
-    def get_tables(self, athlete):
+    def __tables__(self, athlete):
         dataframe = modules.File(athlete, f'{athlete}{self.sheet_name}', f'{self.import_dir}{athlete}.xlsx')
         dataframe = dataframe.import_excel()
         self.tables[athlete] = (dataframe)
         return self.tables
     
-    def stat_parse(self,athlete, dataframe):
+    def __parse__(self,athlete, dataframe):
         athlete = athlete.replace('_', ' ')
         stats = modules.stat_type.StatType()
         stat_col = stats.assign_type(dataframe['Stats'])
@@ -37,7 +38,7 @@ class VOID():
         return self.parsed_stats.values()
 
 
-    def convert(self, stat_col, dataframe):
+    def __convert__(self, stat_col, dataframe):
         convert = modules.converter.Converter(stat_col)
         convert.convert()
         new_stat_col = convert.merge()
@@ -47,23 +48,29 @@ class VOID():
         new_dataframe = dataframe.iloc[0:, [2, 7, 0, 3, 4, 5, 6]]
         return new_dataframe
       
-    def export(self, df, export_dir, opponent_name):
+    def __export__(self, df, export_dir, opponent_name):
         df.to_excel(f'{export_dir}/{opponent_name}.xlsx')
+
+    def void(self):
+        for athlete in void.athletes:
+            tables = self.__tables__(athlete)
+            for dataframes in tables.values():
+                for dataframe in dataframes:
+                    opponent = dataframe.iloc[1][2]
+                    parsed = self.__parse__(athlete, dataframe)
+                    for stat_col in parsed:
+                        new_dataframe = self.__convert__(stat_col, dataframe)
+                        self.__export__(
+                            new_dataframe, self.export_dir, opponent)
+
+            void.parsed_stats.clear()  # Empties the dictionary for the next athlete
 
 
 
 if __name__ == '__main__':
     void = VOID()
-    for athlete in void.athletes:
-        tables = void.get_tables(athlete)
-        for dataframes in tables.values():
-            count = 0
-            for dataframe in dataframes:
-                parsed = void.stat_parse(athlete, dataframe)
-                for stat_col in parsed:
-                    new_dataframe = void.convert(stat_col, dataframe)
-                    void.export(
-                        new_dataframe, '/Users/drewskikatana/Documents/Programming/jiu_jistics/void/test/test_excel_files_export', f'{athlete}_opp_{count}')
-                    count += 1
 
-        void.parsed_stats.clear() # Empties the dictionary for the next athlete
+    void.void()
+
+
+# TODO: parse and convert the 'Other Stats' column
