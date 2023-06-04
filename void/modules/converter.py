@@ -19,7 +19,7 @@ class Converter():
         # ex: (L)GPa -> (R)GPaag
 
     @staticmethod
-    def __direction__( stat_obj) -> None:
+    def __direction__(stat_obj) -> None:
         if stat_obj.direction:
             if stat_obj.stat in CHANGE_DIRECTION:
                 case = stat_obj.direction
@@ -64,6 +64,9 @@ class Converter():
             if stat.full_stat in ('Warning', 'Pen', 'NOT VALID'):
                 self.converted_stats.append(stat.stat)
                 print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.OKBLUE}{stat.full_stat}{bc.ENDC}')
+            elif stat.stat == 'NOT VALID':
+                self.converted_stats.append(f'({stat.full_stat}){stat.stat}')
+                print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.BOLD}{bc.UNDERLINE}{bc.OKCYAN}{stat.stat}{bc.ENDC}{bc.ENDC}{bc.ENDC}')
             else:
                 if stat.direction == '':
                     suffixes = ''.join(stat.suffixes)
