@@ -30,10 +30,10 @@ class VOID():
         self.tables[athlete] = (dataframe)
         return self.tables
     
-    def __parse__(self,athlete, dataframe):
+    def __parse__(self, athlete, dataframe):
         athlete = athlete.replace('_', ' ')
         stats = modules.stat_type.StatType()
-        stat_col = stats.assign_type(dataframe['Stats'])
+        stat_col = stats.assign_type(dataframe['Stats'], athlete)
         self.parsed_stats[athlete] = stat_col
         return self.parsed_stats.values()
 

@@ -6,6 +6,8 @@ class Config():
 
     config = configparser.ConfigParser()
     config.read(f'{os.getcwd()}/void/configs/configs.cfg')
+
+    # VOID configs
     IMPORT_DIR = config['DEFAULTS']['IMPORT_DIR']
     EXPORT_DIR = config['DEFAULTS']['EXPORT_DIR']
     ATHLETES = json.loads(config.get("DEFAULTS", "ATHLETES"))

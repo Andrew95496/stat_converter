@@ -1,7 +1,6 @@
 # MODULES
 from .statics import CHANGE_DIRECTION, DIRECTION_WARNING, ALL_STATS
 from .Errors.error_types import ErrorTypes
-from .stat_logger import StatLogger
 from .color_code import bcolors as bc
 
 
@@ -31,7 +30,6 @@ class Converter():
         
         if stat_obj.stat in DIRECTION_WARNING:
             x = ErrorTypes.WARNING(stat_obj.full_stat, 20)
-            StatLogger(x)
 
     @staticmethod
     def __postion__(stat_obj):

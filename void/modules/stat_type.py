@@ -1,7 +1,7 @@
 from .statics import ALL_STATS, NO_DIRECTION, TYPES
 from .stat_object import Stat
 from .Errors.error_types import ErrorTypes
-from .stat_logger import StatLogger
+from .logger import LOGGER
 
 # '(R)SLTda',
 # '(R)FSwa',
@@ -55,12 +55,13 @@ class StatType():
         
 
     @staticmethod
-    def __stat__(stat: str) -> str:
+    def __stat__(stat: str, athlete) -> str:
         for base_stat in ALL_STATS['Base Stats']:
             if base_stat in stat:
                 return base_stat
         x = ErrorTypes.ERROR(stat, 11)
-        StatLogger(x)
+        logger = LOGGER(athlete)
+        logger.log(x)
          # Stat was not matched
         return 'NOT VALID'
 
@@ -81,7 +82,7 @@ class StatType():
             
 
 
-    def assign_type(self, stat_list) -> Stat:
+    def assign_type(self, stat_list, athlete) -> Stat:
         stat_obj_list = []
         prev_stat = None
         for _stat in stat_list:
@@ -90,7 +91,7 @@ class StatType():
             direction = StatType.__direction__(_stat)
             position = StatType.__position__(_stat)
             prefixes = StatType.__prefix__(_stat)
-            stat = StatType.__stat__(_stat)
+            stat = StatType.__stat__(_stat, athlete)
             suffixes = StatType.__suffix__(_stat)
             is_attempt = StatType.__completed__(_stat)
 
