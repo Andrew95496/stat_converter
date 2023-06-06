@@ -31,16 +31,16 @@ class VOID():
         return self.tables
     
     def __parse__(self, athlete, dataframe):
-        athlete = athlete.replace('_', ' ')
+        _athlete = athlete.replace('_', ' ')
         stats = modules.stat_type.StatType()
         stat_col = stats.assign_type(dataframe['Stats'], athlete)
-        self.parsed_stats[athlete] = stat_col
+        self.parsed_stats[_athlete] = stat_col
         return self.parsed_stats.values()
 
 
-    def __convert__(self, stat_col, dataframe):
+    def __convert__(self, stat_col, dataframe, athlete):
         convert = modules.converter.Converter(stat_col)
-        convert.convert()
+        convert.convert(athlete)
         new_stat_col = convert.merge()
         dataframe['Stats '] = new_stat_col
         dataframe.fillna("",inplace=True)
@@ -59,7 +59,7 @@ class VOID():
                     opponent = dataframe.iloc[1][2]
                     parsed = self.__parse__(athlete, dataframe)
                     for stat_col in parsed:
-                        new_dataframe = self.__convert__(stat_col, dataframe)
+                        new_dataframe = self.__convert__(stat_col, dataframe, athlete)
                         self.__export__(
                             new_dataframe, self.export_dir, opponent)
 

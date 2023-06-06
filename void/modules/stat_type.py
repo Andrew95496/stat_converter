@@ -59,9 +59,9 @@ class StatType():
         for base_stat in ALL_STATS['Base Stats']:
             if base_stat in stat:
                 return base_stat
-        x = ErrorTypes.ERROR(stat, 11)
+        log = ErrorTypes.ERROR(stat, 11)
         logger = LOGGER(athlete)
-        logger.log(x)
+        logger.log(log)
          # Stat was not matched
         return 'NOT VALID'
 

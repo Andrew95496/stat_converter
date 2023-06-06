@@ -2,6 +2,7 @@
 from .statics import CHANGE_DIRECTION, DIRECTION_WARNING, ALL_STATS
 from .Errors.error_types import ErrorTypes
 from .color_code import bcolors as bc
+from .logger import LOGGER
 
 
 # @property
@@ -18,7 +19,7 @@ class Converter():
         # ex: (L)GPa -> (R)GPaag
 
     @staticmethod
-    def __direction__(stat_obj) -> None:
+    def __direction__(stat_obj, athlete) -> None:
         if stat_obj.direction:
             if stat_obj.stat in CHANGE_DIRECTION:
                 case = stat_obj.direction
@@ -29,7 +30,10 @@ class Converter():
                         stat_obj.direction = 'L'
         
         if stat_obj.stat in DIRECTION_WARNING:
-            x = ErrorTypes.WARNING(stat_obj.full_stat, 20)
+            log = ErrorTypes.WARNING(stat_obj.full_stat, 20)
+            logger = LOGGER(athlete)
+            logger.log(log)
+
 
     @staticmethod
     def __postion__(stat_obj):
@@ -51,9 +55,9 @@ class Converter():
             stat_obj.suffixes.append('ag')
 
 
-    def convert(self):
+    def convert(self, athlete):
         for stat in self.stat_obj_list:
-            Converter.__direction__(stat)
+            Converter.__direction__(stat, athlete)
             Converter.__postion__(stat)
             Converter.__suffix__(stat)
 
