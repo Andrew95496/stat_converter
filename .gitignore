@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 .DS_Store
-
+void/.DS_Store
 # C extensions
 *.so
 
@@ -161,3 +161,5 @@ cython_debug/
 #.idea/
 
 TEST/
+athletes/
+logger/
