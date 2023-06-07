@@ -22,7 +22,7 @@ class VOID():
             self.tables = {}
         if parsed_stats is None:
             self.parsed_stats = {}
-            os.system(f'bash saves.sh {configs.Config.EXPORT_DIR} {modules.LOGGER.LOG_DIR}')
+        os.system(f'bash saves.sh {configs.Config.EXPORT_DIR} {modules.LOGGER.LOG_DIR}')
 
 
     def __tables__(self, athlete):
