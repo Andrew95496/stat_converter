@@ -1,6 +1,7 @@
 import modules
 import configs
 
+
 import os
 
 # load_dir = config['DEFAULTS']['LOAD_DIR']
@@ -21,7 +22,7 @@ class VOID():
             self.tables = {}
         if parsed_stats is None:
             self.parsed_stats = {}
-            os.system('bash saves.sh')
+            os.system(f'bash saves.sh {configs.Config.EXPORT_DIR} {modules.LOGGER.LOG_DIR}')
 
 
     def __tables__(self, athlete):

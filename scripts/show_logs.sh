@@ -1,0 +1,1 @@
+cat /Users/drewskikatana/Documents/Programming/jiu_jistics/logger/*.log
