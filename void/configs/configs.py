@@ -5,17 +5,15 @@ import json
 from .update_method import __update_config__
 
 class Config():
+    __update_config__()
+
     config = configparser.ConfigParser()
     config.read(f'{os.getcwd()}/void/configs/configs.cfg')
     
     # VOID configs
     IMPORT_DIR = config['DEFAULTS']['IMPORT_DIR']
     EXPORT_DIR = config['DEFAULTS']['EXPORT_DIR']
-    try:
-        ATHLETES = json.loads(config.get("DEFAULTS", "ATHLETES"))
-    except (json.decoder.JSONDecodeError, NameError):
-        ATHLETES = ""
-        __update_config__()
+    ATHLETES = json.loads(config.get("DEFAULTS", "ATHLETES"))
     SHEET_NAME = config['DEFAULTS']['SHEET_NAME']
 
 
