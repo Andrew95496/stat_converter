@@ -54,7 +54,10 @@ class VOID():
 
     def void(self):
         for athlete in void.athletes:
-            tables = self.__tables__(athlete)
+            try:
+                tables = self.__tables__(athlete)
+            except FileNotFoundError:
+                continue
             for dataframes in tables.values():
                 for dataframe in dataframes:
                     opponent = dataframe.iloc[1][2]
