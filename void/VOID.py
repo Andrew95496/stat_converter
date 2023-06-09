@@ -57,6 +57,7 @@ class VOID():
             try:
                 tables = self.__tables__(athlete)
             except FileNotFoundError:
+                print(f'{athlete} file not found')
                 continue
             for dataframes in tables.values():
                 for dataframe in dataframes:
