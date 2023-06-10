@@ -1,8 +1,10 @@
 import modules
 import configs
 
-
 import os
+
+# * Home directory path
+# print(os.path.expanduser('~'))
 
 # load_dir = config['DEFAULTS']['LOAD_DIR']
 # athletes = ast.literal_eval(config['DEFAULTS']['ATHLETES'])
