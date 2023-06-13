@@ -1,92 +1,101 @@
-.
-├── athletes
-├── Dockerfile
-├── docs
-│  ├── project_structure
-│  └── README_img
-│     └── void-logo-1.jpg
-├── MIT-LICENSE.txt
-├── README.md
-├── requirements.txt
-├── saves.sh
-├── scripts
-│  ├── structure.sh
-│  └── todo.sh
-├── setup.cfg
-├── setup.py
-├── TODO.md
-└── void
-   ├── __pycache__
-   │  ├── __init__.cpython-39.pyc
-   │  ├── __init__.cpython-311.pyc
-   │  ├── VOID.cpython-39.pyc
-   │  └── VOID.cpython-311.pyc
-   ├── athletes
-   ├── configs
-   │  ├── __init__.py
-   │  ├── __pycache__
-   │  │  ├── __init__.cpython-39.pyc
-   │  │  ├── __init__.cpython-311.pyc
-   │  │  ├── athlete_configs.cpython-39.pyc
-   │  │  ├── configs.cpython-39.pyc
-   │  │  ├── configs.cpython-311.pyc
-   │  │  └── main_configs.cpython-311.pyc
-   │  ├── configs.cfg
-   │  └── configs.py
-   ├── modules
-   │  ├── __init__.py
-   │  ├── __pycache__
-   │  │  ├── __init__.cpython-39.pyc
-   │  │  ├── __init__.cpython-311.pyc
-   │  │  ├── __stat.cpython-39.pyc
-   │  │  ├── color_code.cpython-39.pyc
-   │  │  ├── color_code.cpython-311.pyc
-   │  │  ├── converter.cpython-39.pyc
-   │  │  ├── converter.cpython-311.pyc
-   │  │  ├── error_types.cpython-39.pyc
-   │  │  ├── error_types.cpython-311.pyc
-   │  │  ├── file.cpython-311.pyc
-   │  │  ├── imports.cpython-39.pyc
-   │  │  ├── imports.cpython-311.pyc
-   │  │  ├── stat_logger.cpython-311.pyc
-   │  │  ├── stat_object.cpython-39.pyc
-   │  │  ├── stat_object.cpython-311.pyc
-   │  │  ├── stat_type.cpython-311.pyc
-   │  │  ├── statics.cpython-39.pyc
-   │  │  └── statics.cpython-311.pyc
-   │  ├── color_code.py
-   │  ├── converter.py
-   │  ├── dataflow.md
-   │  ├── error_check.py
-   │  ├── Errors
-   │  │  ├── __init__.py
-   │  │  ├── __pycache__
-   │  │  │  ├── __init__.cpython-39.pyc
-   │  │  │  ├── __init__.cpython-311.pyc
-   │  │  │  └── error_types.cpython-311.pyc
-   │  │  ├── error_codes.md
-   │  │  └── error_types.py
-   │  ├── file.py
-   │  ├── stat_logger.py
-   │  ├── stat_object.py
-   │  ├── stat_type.py
-   │  └── statics.py
-   ├── test
-   │  ├── test_code
-   │  │  └── test.py
-   │  ├── test_excel_files_export
-   │  │  ├── gordon_ryan_opp_0.xlsx
-   │  │  ├── gordon_ryan_opp_1.xlsx
-   │  │  ├── gordon_ryan_opp_2.xlsx
-   │  │  ├── gordon_ryan_opp_3.xlsx
-   │  │  ├── gordon_ryan_opp_4.xlsx
-   │  │  ├── kade_ruotolo_opp_0.xlsx
-   │  │  ├── kade_ruotolo_opp_1.xlsx
-   │  │  └── kade_ruotolo_opp_2.xlsx
-   │  ├── test_excel_files_import
-   │  │  ├── gordon_ryan.xlsx
-   │  │  └── kade_ruotolo.xlsx
-   │  └── test_logger
-   │     └── flag_log.txt
-   ├── void-cli.py
-   └── VOID.py
+drwxr-xr-x     - drewskikatana  6 Jun 22:06 .
+drwxr-xr-x     - drewskikatana  6 Jun 22:06 ├── athletes
+.rw-r--r--   107 drewskikatana  6 Jun 22:19 ├── Dockerfile
+drwxr-xr-x     - drewskikatana  3 Jun 16:02 ├── docs
+.rw-r--r--     0 drewskikatana 13 Jun 18:42 │  ├── project_structure
+drwxr-xr-x     - drewskikatana 31 May 22:19 │  └── README_img
+.rw-r--r--   59k drewskikatana 14 May 11:43 │     └── void-logo-1.jpg
+drwxr-xr-x     - drewskikatana  9 Jun 20:59 ├── logger
+.rw-r--r--  1.1k drewskikatana  9 Jun 20:59 │  ├── gordon_ryan_conversion_log.log
+.rw-r--r--  2.3k drewskikatana  9 Jun 20:59 │  └── kade_ruotolo_conversion_log.log
+.rw-r--r--  1.1k drewskikatana  9 May 22:51 ├── MIT-LICENSE.txt
+.rw-r--r--  5.2k drewskikatana 31 May 22:23 ├── README.md
+.rw-r--r--@ 4.5k drewskikatana 10 Jun 00:07 ├── requirements.txt
+.rw-r--r--@  522 drewskikatana  6 Jun 22:13 ├── saves.sh
+drwxr-xr-x     - drewskikatana  6 Jun 21:59 ├── scripts
+.rw-r--r--    71 drewskikatana  6 Jun 21:31 │  ├── show_logs.sh
+.rw-r--r--   132 drewskikatana  1 Jun 20:36 │  ├── structure.sh
+.rw-r--r--    67 drewskikatana  3 Jun 16:15 │  └── todo.sh
+.rw-r--r--   345 drewskikatana 30 May 23:00 ├── setup.cfg
+.rw-r--r--@   37 drewskikatana 30 May 22:43 ├── setup.py
+.rw-r--r--   597 drewskikatana  3 Jun 16:55 ├── TODO.md
+drwxr-xr-x     - drewskikatana  8 Jun 20:57 └── void
+drwxr-xr-x     - drewskikatana 30 May 22:55    ├── __pycache__
+.rw-r--r--   195 drewskikatana 30 May 21:18    │  ├── __init__.cpython-39.pyc
+.rw-r--r--   219 drewskikatana 30 May 22:55    │  ├── __init__.cpython-311.pyc
+.rw-r--r--  1.8k drewskikatana 30 May 21:23    │  ├── VOID.cpython-39.pyc
+.rw-r--r--  3.0k drewskikatana 30 May 22:45    │  └── VOID.cpython-311.pyc
+drwxr-xr-x     - drewskikatana  9 Jun 20:58    ├── configs
+.rw-r--r--    69 drewskikatana  9 Jun 20:44    │  ├── __init__.py
+drwxr-xr-x     - drewskikatana  9 Jun 20:59    │  ├── __pycache__
+.rw-r--r--   194 drewskikatana  1 Jun 19:22    │  │  ├── __init__.cpython-39.pyc
+.rw-r--r--   308 drewskikatana  9 Jun 20:45    │  │  ├── __init__.cpython-311.pyc
+.rw-r--r--   195 drewskikatana  1 Jun 19:22    │  │  ├── athlete_configs.cpython-39.pyc
+.rw-r--r--   397 drewskikatana  1 Jun 19:22    │  │  ├── configs.cpython-39.pyc
+.rw-r--r--  1.8k drewskikatana  9 Jun 20:45    │  │  ├── configs.cpython-311.pyc
+.rw-r--r--  1.8k drewskikatana  1 Jun 19:22    │  │  ├── main_configs.cpython-311.pyc
+.rw-r--r--  2.0k drewskikatana  9 Jun 20:59    │  │  ├── update_configs.cpython-311.pyc
+.rw-r--r--  1.6k drewskikatana  8 Jun 20:35    │  │  └── update_method.cpython-311.pyc
+.rw-r--r--   373 drewskikatana  9 Jun 20:59    │  ├── configs.cfg
+.rw-r--r--  1.1k drewskikatana  9 Jun 20:45    │  ├── configs.py
+.rw-r--r--   803 drewskikatana  9 Jun 20:59    │  └── update_configs.py
+drwxr-xr-x     - drewskikatana  8 Jun 19:11    ├── modules
+.rw-r--r--   195 drewskikatana  6 Jun 18:21    │  ├── __init__.py
+drwxr-xr-x     - drewskikatana  8 Jun 20:46    │  ├── __pycache__
+.rw-r--r--   383 drewskikatana 27 May 22:06    │  │  ├── __init__.cpython-39.pyc
+.rw-r--r--   536 drewskikatana  6 Jun 18:23    │  │  ├── __init__.cpython-311.pyc
+.rw-r--r--   534 drewskikatana 25 May 21:22    │  │  ├── __stat.cpython-39.pyc
+.rw-r--r--   499 drewskikatana 14 May 14:53    │  │  ├── color_code.cpython-39.pyc
+.rw-r--r--   613 drewskikatana 27 May 16:44    │  │  ├── color_code.cpython-311.pyc
+.rw-r--r--  1.3k drewskikatana 29 May 19:41    │  │  ├── converter.cpython-39.pyc
+.rw-r--r--  5.2k drewskikatana  6 Jun 18:49    │  │  ├── converter.cpython-311.pyc
+.rw-r--r--   782 drewskikatana 25 May 22:30    │  │  ├── error_types.cpython-39.pyc
+.rw-r--r--  1.4k drewskikatana 27 May 16:49    │  │  ├── error_types.cpython-311.pyc
+.rw-r--r--  2.9k drewskikatana  8 Jun 20:46    │  │  ├── file.cpython-311.pyc
+.rw-r--r--  1.7k drewskikatana 27 May 22:06    │  │  ├── imports.cpython-39.pyc
+.rw-r--r--  2.6k drewskikatana  3 Jun 16:08    │  │  ├── imports.cpython-311.pyc
+.rw-r--r--  1.7k drewskikatana  6 Jun 21:59    │  │  ├── logger.cpython-311.pyc
+.rw-r--r--  1.3k drewskikatana  1 Jun 22:23    │  │  ├── stat_logger.cpython-311.pyc
+.rw-r--r--  1.4k drewskikatana 27 May 22:06    │  │  ├── stat_object.cpython-39.pyc
+.rw-r--r--  2.2k drewskikatana  1 Jun 23:34    │  │  ├── stat_object.cpython-311.pyc
+.rw-r--r--  4.5k drewskikatana  6 Jun 18:49    │  │  ├── stat_type.cpython-311.pyc
+.rw-r--r--  1.2k drewskikatana 29 May 19:41    │  │  ├── statics.cpython-39.pyc
+.rw-r--r--  1.4k drewskikatana  4 Jun 16:08    │  │  └── statics.cpython-311.pyc
+.rw-r--r--   226 drewskikatana  2 May 22:42    │  ├── color_code.py
+.rw-r--r--  3.2k drewskikatana  6 Jun 18:48    │  ├── converter.py
+.rw-r--r--@  646 drewskikatana 28 May 12:56    │  ├── dataflow.md
+.rw-r--r--   662 drewskikatana 28 May 11:33    │  ├── error_check.py
+drwxr-xr-x     - drewskikatana  1 Jun 21:59    │  ├── Errors
+.rw-r--r--    35 drewskikatana 27 May 21:08    │  │  ├── __init__.py
+drwxr-xr-x     - drewskikatana  6 Jun 18:49    │  │  ├── __pycache__
+.rw-r--r--   218 drewskikatana 29 May 19:41    │  │  │  ├── __init__.cpython-39.pyc
+.rw-r--r--   250 drewskikatana 27 May 21:08    │  │  │  ├── __init__.cpython-311.pyc
+.rw-r--r--  1.8k drewskikatana  6 Jun 18:49    │  │  │  └── error_types.cpython-311.pyc
+.rw-r--r--   333 drewskikatana 28 May 13:09    │  │  ├── error_codes.md
+.rw-r--r--   752 drewskikatana  6 Jun 18:44    │  │  └── error_types.py
+.rw-r--r--  1.6k drewskikatana  8 Jun 20:44    │  ├── file.py
+.rw-r--r--   701 drewskikatana  6 Jun 21:59    │  ├── logger.py
+.rw-r--r--  1.0k drewskikatana  1 Jun 23:34    │  ├── stat_object.py
+.rw-r--r--  3.1k drewskikatana  6 Jun 18:47    │  ├── stat_type.py
+.rw-r--r--  1.6k drewskikatana  4 Jun 16:04    │  └── statics.py
+drwxr-xr-x     - drewskikatana  3 Jun 16:51    ├── test
+drwxr-xr-x     - drewskikatana 22 May 23:39    │  ├── test_code
+.rw-r--r--   329 drewskikatana 22 May 23:39    │  │  └── test.py
+drwxr-xr-x     - drewskikatana  4 Jun 16:49    │  ├── test_excel_files_export
+.rw-r--r--  6.7k drewskikatana  9 Jun 20:59    │  │  ├── Andre Galvao.xlsx
+.rw-r--r--  6.0k drewskikatana  9 Jun 20:59    │  │  ├── Heikki Jussila.xlsx
+.rw-r--r--  6.8k drewskikatana  9 Jun 20:59    │  │  ├── Mica Galvao.xlsx
+.rw-r--r--  5.8k drewskikatana  9 Jun 20:59    │  │  ├── Nick Rodriguez.xlsx
+.rw-r--r--  6.3k drewskikatana  9 Jun 20:59    │  │  ├── PJ Barch.xlsx
+.rw-r--r--  5.9k drewskikatana  9 Jun 20:59    │  │  ├── Roberto Jimenez.xlsx
+.rw-r--r--  5.7k drewskikatana  9 Jun 20:59    │  │  ├── Roosevelt Sousa.xlsx
+.rw-r--r--  6.7k drewskikatana  9 Jun 20:59    │  │  └── Victor Hugo.xlsx
+drwxr-xr-x     - drewskikatana  8 Jun 20:40    │  ├── test_excel_files_import
+.rw-r--r--@  25k drewskikatana 28 May 18:11    │  │  ├── gordon_ryan.xlsx
+.rw-r--r--@ 288k drewskikatana 28 May 18:11    │  │  ├── kade_ruotolo.xlsx
+.rw-r--r--     0 drewskikatana  8 Jun 19:19    │  │  ├── x.py
+.rw-r--r--     0 drewskikatana  8 Jun 20:40    │  │  └── z
+drwxr-xr-x     - drewskikatana  1 Jun 21:58    │  └── test_logger
+.rw-r--r--  690k drewskikatana  4 Jun 17:00    │     └── flag_log.txt
+.rw-r--r--   292 drewskikatana 31 May 22:18    ├── void-cli.py
+.rwxr-xr-x  3.1k drewskikatana  8 Jun 20:58    └── VOID.py
