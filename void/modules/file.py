@@ -6,6 +6,8 @@ import pandas as pd
 
 class File():
 
+    __slots__ = ('file_name', 'sheet_name', 'import_dir')
+
     def __init__(self, file_name, sheet_name, import_dir):
         self.file_name = file_name
         self.sheet_name = sheet_name

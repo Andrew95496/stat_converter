@@ -14,7 +14,7 @@ class LOGGER():
     LOG_DIR = config['STAT LOGGER']['LOG_DIR']
     FILE_NAME = config['STAT LOGGER']['FILE_NAME']
 
-
+    __slots__ = ('athlete', 'log_dir', 'file_name')
 
     def __init__(self, athlete, log_dir = LOG_DIR, file_name = FILE_NAME) -> None:
         self.athlete = athlete

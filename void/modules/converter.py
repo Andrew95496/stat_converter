@@ -6,7 +6,9 @@ from .logger import LOGGER
 
 
 # @property
-class Converter():    
+class Converter(): 
+
+    __slots__ = ('stat_obj_list', 'converted_stats')   
 
     def __init__(self, stat_obj_list, converted_stats = None):
         self.stat_obj_list = stat_obj_list
