@@ -1,11 +1,11 @@
-ALL_STATS = {'Position Types': {'Td', 'Gp', 'Gu', 'Pos'},
+ALL_STATS: dict = {'Position Types': {'Td', 'Gp', 'Gu', 'Pos'},
              'Execution Prefix': {'cl', 'n', 'ct', '+', '-', '='},
              'Base Stats': {'GTD', 'FSW', 'SLTD', 'DLTD', 'Th', 'CTD', 'SCT', 'GUP', 'Sd',
                             'GP', 'OB', 'Sw', 'LEE', 'PA', 'PT', 'PE', 'PL', 'Pin', 'Sub',
                             'Pen', 'Warning', 'Rv', 'AlSu', 'fSu', 'Scr', 'Bt'},
              'Execution Suffix': {'ch', 'a', 'ag'}}
 
-TYPES = {'Takedown': ['GTD', 'FSW', 'SLTD', 'DLTD', 'Th', 'CTD'],
+TYPES: dict = {'Takedown': ['GTD', 'FSW', 'SLTD', 'DLTD', 'Th', 'CTD'],
          'Standing': ['SCT', 'GUP', 'Sd'],
          'Guard Pass': ['GP'],
          'Guard': ['OB', 'Sw'],
@@ -28,15 +28,15 @@ SPECIAL_STATS = {'PL': {'cPE', 'PR'},
 
 # STATS WITH NO (L), (M), (R)
 # TODO: ADD Positions and prefixes to applicable Stats
-NO_DIRECTION = {'PA', 'PT', 'PE', 'PL', 'Pin', 'Pen', 'AlSu',
+NO_DIRECTION: set = {'PA', 'PT', 'PE', 'PL', 'Pin', 'Pen', 'AlSu',
                 'fSu', 'Scr', 'Bt', 'SCT', 'P', 'Warning'}  # P is Depreciated
 
-CHANGE_DIRECTION = {'DLTD', 'SLTD', 'GP', 'OB', 'Sw'}
+CHANGE_DIRECTION: set = {'DLTD', 'SLTD', 'GP', 'OB', 'Sw'}
 
-DIRECTION_WARNING = {'FSW', 'Sw', 'OB', 'CTD', 'Th'}
+DIRECTION_WARNING: set = {'FSW', 'Sw', 'OB', 'CTD', 'Th'}
 
 
 
 # Some stats are linked with other stats
 # ex: Bt [PA, PT]
-LINKED_STATS = {'Bt': ['PT, PA'], }
+LINKED_STATS: dict = {'Bt': ['PT, PA'], }

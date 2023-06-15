@@ -82,7 +82,7 @@ class StatType():
             
 
 
-    def assign_type(self, stat_list, athlete) -> Stat:
+    def assign_type(self, stat_list: list[str], athlete: str) -> Stat:
         stat_obj_list = []
         prev_stat = None
         for _stat in stat_list:

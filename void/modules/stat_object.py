@@ -13,7 +13,8 @@ class Stat():
                 prefixes: str, 
                 stat: str, 
                 suffixes: list, 
-                is_attempt, flags = None) -> str:
+                is_attempt: bool,
+                flags: tuple = None) -> str:
         
         self.prev_stat = prev_stat
         self.full_stat = full_stat
