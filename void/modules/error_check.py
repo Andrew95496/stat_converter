@@ -5,7 +5,7 @@ from stat_object import Stat
 # TODO BUG: (L)GPa <- (R)GP would be valid [NOT CORRECT] 
 class ErrorCheck():
 
-    __slots__ = ('stats')
+    __slots__: tuple[str] = ('stats')
 
     #  Checks if attempts come before a completed action
     def attempt_previous(self, stats: list[str]) -> None:

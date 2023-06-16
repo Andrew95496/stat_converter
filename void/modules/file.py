@@ -6,15 +6,15 @@ import pandas as pd
 
 class File():
 
-    __slots__ = ('file_name', 'sheet_name', 'import_dir')
+    __slots__: tuple[str] = ('file_name', 'sheet_name', 'import_dir')
 
-    def __init__(self, file_name, sheet_name, import_dir):
+    def __init__(self, file_name: str, sheet_name: str, import_dir: str):
         self.file_name = file_name
         self.sheet_name = sheet_name
         self.import_dir = import_dir
 
-    def import_excel(self):
-        table_list = []
+    def import_excel(self) -> list[pd.DataFrame]:
+        table_list: list[pd.DataFrame] = []
         workbook = load_workbook(self.import_dir, data_only='True')
 
         worksheet = workbook[self.sheet_name]

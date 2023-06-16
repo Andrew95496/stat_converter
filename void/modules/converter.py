@@ -8,9 +8,9 @@ from .logger import LOGGER
 # @property
 class Converter(): 
 
-    __slots__ = ('stat_obj_list', 'converted_stats')   
+    __slots__: tuple[str] = ('stat_obj_list', 'converted_stats')   
 
-    def __init__(self, stat_obj_list, converted_stats = None):
+    def __init__(self, stat_obj_list: list[object], converted_stats: list[object] = None):
         self.stat_obj_list = stat_obj_list
         if converted_stats is None:
             self.converted_stats = []
@@ -21,7 +21,7 @@ class Converter():
         # ex: (L)GPa -> (R)GPaag
 
     @staticmethod
-    def __direction__(stat_obj, athlete) -> None:
+    def __direction__(stat_obj: object, athlete: str) -> None:
         if stat_obj.direction:
             if stat_obj.stat in CHANGE_DIRECTION:
                 case = stat_obj.direction
@@ -38,7 +38,7 @@ class Converter():
 
 
     @staticmethod
-    def __postion__(stat_obj):
+    def __postion__(stat_obj: object):
         case = stat_obj.position
         match case:
             case 'Gp':
@@ -49,7 +49,7 @@ class Converter():
 
     #Adds an ag(against) or removes ag for all appropriate stats
     @staticmethod
-    def __suffix__(stat_obj) -> None:
+    def __suffix__(stat_obj: object) -> None:
         if 'ag' in stat_obj.suffixes:
             # print(stat_obj.full_stat, stat_obj.suffixes)
             stat_obj.suffixes.remove('ag')
@@ -57,13 +57,13 @@ class Converter():
             stat_obj.suffixes.append('ag')
 
 
-    def convert(self, athlete):
+    def convert(self, athlete: str) -> None:
         for stat in self.stat_obj_list:
             Converter.__direction__(stat, athlete)
             Converter.__postion__(stat)
             Converter.__suffix__(stat)
 
-    def merge(self):
+    def merge(self) -> list:
         for stat in self.stat_obj_list:
             if stat.full_stat in ('Warning', 'Pen', 'NOT VALID'):
                 self.converted_stats.append(stat.stat)
