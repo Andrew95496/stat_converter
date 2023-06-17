@@ -12,7 +12,7 @@ class ErrorCheck():
         prev_stat = 'Start'
         for stat in stats:
             rd_stat = Stat.remove_direction(stat)
-            print(prev_stat, '<-', stat)
+            # print(prev_stat, '<-', stat)
             if rd_stat in COMPLETED_STATS and (prev_stat == 'Start' or prev_stat.endswith('a') == False):
                 ErrorTypes.no_attempt_error(stat)
             prev_stat = stat

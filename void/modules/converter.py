@@ -56,31 +56,41 @@ class Converter():
         elif 'ag' not in stat_obj.suffixes and stat_obj.stat != 'Scr':
             stat_obj.suffixes.append('ag')
 
+    def __special__(stat_obj):
+        case = stat_obj.prefixes
+        match case:
+            case '+':
+                stat_obj.prefixes = '-'
+            case '-':
+                stat_obj.prefixes = '+'
 
     def convert(self, athlete: str) -> None:
         for stat in self.stat_obj_list:
-            Converter.__direction__(stat, athlete)
-            Converter.__postion__(stat)
-            Converter.__suffix__(stat)
+            if stat.stat == 'Scr':
+                Converter.__special__(stat)
+            else:
+                Converter.__direction__(stat, athlete)
+                Converter.__postion__(stat)
+                Converter.__suffix__(stat)
 
     def merge(self) -> list:
         for stat in self.stat_obj_list:
             if stat.full_stat in ('Warning', 'Pen', 'NOT VALID'):
                 self.converted_stats.append(stat.stat)
-                print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.OKBLUE}{stat.full_stat}{bc.ENDC}')
+                # print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.OKBLUE}{stat.full_stat}{bc.ENDC}')
             elif stat.stat == 'NOT VALID':
                 self.converted_stats.append(f'({stat.full_stat}){stat.stat}')
-                print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.BOLD}{bc.UNDERLINE}{bc.OKCYAN}{stat.stat}{bc.ENDC}{bc.ENDC}{bc.ENDC}')
+                # print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.BOLD}{bc.UNDERLINE}{bc.OKCYAN}{stat.stat}{bc.ENDC}{bc.ENDC}{bc.ENDC}')
             else:
                 if stat.direction == '':
                     suffixes = ''.join(stat.suffixes)
                     new_stat = f'{stat.position}{stat.prefixes}{stat.stat}{suffixes}'
-                    print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.OKBLUE}{new_stat}{bc.ENDC}')
+                    # print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}', '->', f'{bc.OKBLUE}{new_stat}{bc.ENDC}')
                     self.converted_stats.append(new_stat)
                 else:
                     suffixes = ''.join(stat.suffixes)
                     new_stat = f'({stat.direction}){stat.position}{stat.prefixes}{stat.stat}{suffixes}'
-                    print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}','->', f'{bc.OKBLUE}{new_stat}{bc.ENDC}')
+                    # print(f'{bc.FAIL}{stat.full_stat}{bc.ENDC}','->', f'{bc.OKBLUE}{new_stat}{bc.ENDC}')
                     self.converted_stats.append(new_stat)
         return self.converted_stats
         

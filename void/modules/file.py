@@ -16,16 +16,13 @@ class File():
     def import_excel(self) -> list[pd.DataFrame]:
         table_list: list[pd.DataFrame] = []
         workbook = load_workbook(self.import_dir, data_only='True')
-
         worksheet = workbook[self.sheet_name]
 
-        mapping = {}
-
+        mapping: dict = {}
         # loop through all the tables and add to a dictionary
         for table, data_boundary in worksheet.tables.items():
             # parse the data within the ref boundary
             data = worksheet[data_boundary]
-
             ### extract the data ###
             # the inner list comprehension gets the values for each cell in the table
             content = [[cell.value for cell in ent]
@@ -46,6 +43,6 @@ class File():
             
         return table_list
 
-    def export_excel(self, dataframe,opponent_name, export_dir):
+    def export_excel(self, dataframe: pd.DataFrame, opponent_name: str, export_dir: str) -> None:
         dataframe.to_excel(f'{export_dir}/{opponent_name}.xlsx')
         

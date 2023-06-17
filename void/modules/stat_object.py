@@ -25,7 +25,7 @@ class Stat():
         self.stat = stat
         self.suffixes = suffixes
         self.is_attempt = is_attempt
-        print(f'{bc.BOLD}{bc.OKGREEN}{self.full_stat} initialized{bc.ENDC}')
+        # print(f'{bc.BOLD}{bc.OKGREEN}{self.full_stat} initialized{bc.ENDC}')
 
     def __str__(self) -> str:
         return f'''{bc.HEADER}

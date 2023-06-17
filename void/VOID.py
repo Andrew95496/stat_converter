@@ -14,7 +14,7 @@ import os
 # athlete: str | None = None, opponent: str | None = None, time: list[str] = None
 class VOID():
 
-    def __init__(self, dataframe=None, import_dir: str = configs.Config.IMPORT_DIR, export_dir: str = configs.Config.EXPORT_DIR, sheet_name: str = configs.Config.SHEET_NAME, athletes: list[str] = configs.Config.ATHLETES, tables: list[dict] | None = None, parsed_stats: list[dict] | None = None) -> None:
+    def __init__(self, dataframe: None | object = None, import_dir: str = configs.Config.IMPORT_DIR, export_dir: str = configs.Config.EXPORT_DIR, sheet_name: str = configs.Config.SHEET_NAME, athletes: list[str] = configs.Config.ATHLETES, tables: list[dict] | None = None, parsed_stats: list[dict] | None = None) -> None:
         self.dataframe = dataframe
         self.import_dir = import_dir
         self.export_dir = export_dir
@@ -47,7 +47,7 @@ class VOID():
         new_stat_col = convert.merge()
         dataframe['Stats '] = new_stat_col
         dataframe.fillna("",inplace=True)
-        print('\n', dataframe.iloc[0:, [2, 7, 0, 3, 4, 5, 6]], '\n')
+        # print('\n', dataframe.iloc[0:, [2, 7, 0, 3, 4, 5, 6]], '\n')
         new_dataframe = dataframe.iloc[0:, [2, 7, 0, 3, 4, 5, 6]]
         return new_dataframe
       
