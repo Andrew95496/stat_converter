@@ -21,6 +21,9 @@ class LOGGER():
         self.file_name = file_name
 
 
-    def log(self, logs) -> None:
+    def log(self, logs, msg=None) -> None:
         with open(f'/Users/drewskikatana/Documents/Programming/jiu_jistics{self.log_dir}{self.athlete}{self.file_name}.log', 'a+') as logger:
-            logger.write(f'\n{logs}\n')
+            if msg:
+                logger.write(f'\n{logs}: {msg}\n')
+            else:
+                logger.write(f'\n{logs}\n')

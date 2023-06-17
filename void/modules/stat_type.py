@@ -55,11 +55,11 @@ class StatType():
         
 
     @staticmethod
-    def __stat__(stat: str, athlete) -> str:
+    def __stat__(stat: str, athlete, opponent: str) -> str:
         for base_stat in ALL_STATS['Base Stats']:
             if base_stat in stat:
                 return base_stat
-        log = ErrorTypes.ERROR(stat, 11)
+        log = ErrorTypes.ERROR(stat, 11, opponent)
         logger = LOGGER(athlete)
         logger.log(log)
          # Stat was not matched
@@ -82,7 +82,7 @@ class StatType():
             
 
 
-    def assign_type(self, stat_list: list[str], athlete: str) -> Stat:
+    def assign_type(self, stat_list: list[str], athlete: str, opponent:str) -> Stat:
         stat_obj_list = []
         prev_stat = None
         for _stat in stat_list:
@@ -91,7 +91,7 @@ class StatType():
             direction = StatType.__direction__(_stat)
             position = StatType.__position__(_stat)
             prefixes = StatType.__prefix__(_stat)
-            stat = StatType.__stat__(_stat, athlete)
+            stat = StatType.__stat__(_stat, athlete, opponent)
             suffixes = StatType.__suffix__(_stat)
             is_attempt = StatType.__completed__(_stat)
 

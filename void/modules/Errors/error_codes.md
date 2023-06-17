@@ -10,3 +10,5 @@
 ## WARNING: 2
 
 - `20`: **CHECK WARNING** - When the result given by the software may not be accurate
+
+-`21`: **LINK WARNING** - When stats are linked to other stats

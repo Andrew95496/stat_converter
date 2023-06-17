@@ -1,5 +1,5 @@
 # MODULES
-from .statics import CHANGE_DIRECTION, DIRECTION_WARNING, ALL_STATS
+from .statics import CHANGE_DIRECTION, DIRECTION_WARNING, SPECIAL_STATS, LINKED_STATS
 from .Errors.error_types import ErrorTypes
 from .color_code import bcolors as bc
 from .logger import LOGGER
@@ -21,7 +21,7 @@ class Converter():
         # ex: (L)GPa -> (R)GPaag
 
     @staticmethod
-    def __direction__(stat_obj: object, athlete: str) -> None:
+    def __direction__(stat_obj: object, athlete: str, opponent: str) -> None:
         if stat_obj.direction:
             if stat_obj.stat in CHANGE_DIRECTION:
                 case = stat_obj.direction
@@ -32,7 +32,7 @@ class Converter():
                         stat_obj.direction = 'L'
         
         if stat_obj.stat in DIRECTION_WARNING:
-            log = ErrorTypes.WARNING(stat_obj.full_stat, 20)
+            log = ErrorTypes.WARNING(stat_obj.full_stat, 20, opponent)
             logger = LOGGER(athlete)
             logger.log(log)
 
@@ -56,20 +56,33 @@ class Converter():
         elif 'ag' not in stat_obj.suffixes and stat_obj.stat != 'Scr':
             stat_obj.suffixes.append('ag')
 
-    def __special__(stat_obj):
+    @staticmethod
+    def __links__(stat_obj: object, athlete: str, opponent: str):
+        if stat_obj.stat in LINKED_STATS:
+            log = ErrorTypes.WARNING(stat_obj.full_stat, 21, opponent)
+            logger = LOGGER(athlete)
+            logger.log(log, msg=LINKED_STATS[stat_obj.stat])
+
+    @staticmethod
+    def __special__(stat_obj: object, athlete: str, opponent: str):
+           
+
         case = stat_obj.prefixes
         match case:
             case '+':
                 stat_obj.prefixes = '-'
             case '-':
                 stat_obj.prefixes = '+'
+        
+        
 
-    def convert(self, athlete: str) -> None:
+    def convert(self, athlete: str, opponent: str) -> None:
         for stat in self.stat_obj_list:
-            if stat.stat == 'Scr':
-                Converter.__special__(stat)
+            Converter.__links__(stat, athlete, opponent)
+            if stat.stat in SPECIAL_STATS:
+                Converter.__special__(stat, athlete,opponent)
             else:
-                Converter.__direction__(stat, athlete)
+                Converter.__direction__(stat, athlete,opponent)
                 Converter.__postion__(stat)
                 Converter.__suffix__(stat)
 
