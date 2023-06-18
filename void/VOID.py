@@ -27,13 +27,13 @@ class VOID():
         os.system(f'bash saves.sh {configs.Config.EXPORT_DIR} {modules.LOGGER.LOG_DIR}')
 
 
-    def __tables__(self, athlete):
+    def __tables__(self, athlete: str):
         dataframe = modules.File(athlete, f'{athlete}{self.sheet_name}', f'{self.import_dir}{athlete}.xlsx')
         dataframe = dataframe.import_excel()
         self.tables[athlete] = (dataframe)
         return self.tables
     
-    def __parse__(self, athlete, dataframe, opponent):
+    def __parse__(self, athlete: str, dataframe: pd.Dataframe, opponent: str):
         _athlete = athlete.replace('_', ' ')
         stats = modules.stat_type.StatType()
         stat_col = stats.assign_type(dataframe['Stats'], athlete, opponent)
@@ -41,7 +41,7 @@ class VOID():
         return self.parsed_stats.values()
 
 
-    def __convert__(self, stat_col, dataframe, athlete, opponent):
+    def __convert__(self, stat_col: list, dataframe: pd.Dataframe, athlete: str, opponent: str):
         convert = modules.converter.Converter(stat_col)
         convert.convert(athlete, opponent)
         new_stat_col = convert.merge()
@@ -51,7 +51,7 @@ class VOID():
         new_dataframe = dataframe.iloc[0:, [2, 7, 0, 3, 4, 5, 6]]
         return new_dataframe
       
-    def __export__(self, df, export_dir, opponent_name):
+    def __export__(self, df: pd.Dataframe, export_dir: str, opponent_name: str):
         df.to_excel(f'{export_dir}/{opponent_name}.xlsx')
 
     def void(self):
