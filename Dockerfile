@@ -1,6 +1,6 @@
 FROM python:3.10
 
-ADD void.py .
+ADD void/void.py .
 
 RUN pip install pandas openpyxl configparser
 
