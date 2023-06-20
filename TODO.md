@@ -2,7 +2,7 @@
 
 - ./Makefile:2:#TODO: Add user input for venv
 
-- ./docs/dataflow.md:3:<!-- TODO: Add Public/Private -->
+- ./docs/dataflow.md:3: TODO: Add Public/Private
 
 - ./docs/project_structure:21:.rw-r--r--   597 drewskikatana  3 Jun 16:55 ├── TODO.md
 
