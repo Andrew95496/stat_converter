@@ -1,8 +1,14 @@
+- ./Makefile:1:#TODO: Add venv
+
+- ./Makefile:2:#TODO: Add user input for venv
+
+- ./docs/dataflow.md:3:<!-- TODO: Add Public/Private -->
+
 - ./docs/project_structure:21:.rw-r--r--   597 drewskikatana  3 Jun 16:55 ├── TODO.md
 
 - ./scripts/todo.sh:1:grep -rn "TODO" ./* | sed 's/^/- /' | sed G > TODO.md | cat TODO.md
 
-- ./void/VOID.py:83:# TODO: parse and convert the 'Other Stats' column
+- ./void/VOID.py:84:# TODO: parse and convert the 'Other Stats' column
 
 - ./void/configs/update_configs.py:8:# TODO: Turn into class
 
@@ -10,9 +16,7 @@
 
 - ./void/configs/update_configs.py:10:# TODO: What if import file is empty
 
-- ./void/modules/statics.py:30:# TODO: ADD Positions and prefixes to applicable Stats
-
-- ./void/modules/dataflow.md:3:<!-- TODO: Add Public/Private -->
+- ./void/modules/statics.py:26:# TODO: ADD Positions and prefixes to applicable Stats
 
 - ./void/modules/error_check.py:5:# TODO BUG: (L)GPa <- (R)GP would be valid [NOT CORRECT] 
 
