@@ -50,6 +50,7 @@ toml @ file:///tmp/build/80754af9/toml_1616166611790/work
 toolz @ file:///home/conda/feedstock_root/build_artifacts/toolz_1657485559105/work
 typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1685045523825/work
 urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1683161174614/work
+VOID @ file:///Users/drewskikatana/Documents/Programming/jiu_jistics
 web3 @ file:///Users/runner/miniforge3/conda-bld/web3_1683228430880/work
 websockets @ file:///Users/runner/miniforge3/conda-bld/websockets_1683550264809/work
 XlsxWriter @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_ffmq82fiox/croot/xlsxwriter_1685021134049/work
