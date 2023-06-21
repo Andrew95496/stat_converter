@@ -28,5 +28,4 @@ build:
 clean:
 	rm -rf build
 	rm -rf VOID.egg_info
-
 endif
