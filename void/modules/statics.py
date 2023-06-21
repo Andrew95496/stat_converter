@@ -1,3 +1,5 @@
+# TODO: add FT Forced Turtle
+
 ALL_STATS: dict = {'Position Types': {'Td', 'Gp', 'Gu', 'Pos'},
              'Execution Prefix': {'cl', 'n', 'ct', '+', '-', '='},
              'Base Stats': {'GTD', 'FSW', 'SLTD', 'DLTD', 'Th', 'CTD', 'SCT', 'GUP', 'Sd',
@@ -23,7 +25,6 @@ TYPES: dict = {'Takedown': ['GTD', 'FSW', 'SLTD', 'DLTD', 'Th', 'CTD'],
 
 
 # STATS WITH NO (L), (M), (R)
-# TODO: ADD Positions and prefixes to applicable Stats
 NO_DIRECTION: set = {'PA', 'PT', 'PE', 'PL', 'Pin', 'Pen', 'AlSu',
                 'fSu', 'Scr', 'Bt', 'SCT', 'P', 'Warning'}  # P is Depreciated
 

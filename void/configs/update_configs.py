@@ -5,7 +5,6 @@ import json
 # * Home directory path
 # print(os.path.expanduser('~'))
 
-# TODO: Turn into class
 # TODO: revert default settings
 # TODO: What if import file is empty
 
