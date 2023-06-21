@@ -1,58 +1,61 @@
-aiohttp @ file:///Users/runner/miniforge3/conda-bld/aiohttp_1676292794306/work
-aiosignal @ file:///home/conda/feedstock_root/build_artifacts/aiosignal_1667935791922/work
-async-timeout @ file:///home/conda/feedstock_root/build_artifacts/async-timeout_1640026696943/work
-attrs @ file:///home/conda/feedstock_root/build_artifacts/attrs_1683424013410/work
-autopep8 @ file:///opt/conda/conda-bld/autopep8_1650463822033/work
-bitarray @ file:///Users/runner/miniforge3/conda-bld/bitarray_1677415534954/work
-Bottleneck @ file:///Users/ec2-user/ci_py311/bottleneck_1678322312632/work
-certifi @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b64zphacdv/croot/certifi_1683875375103/work/certifi
-charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
-cytoolz @ file:///Users/runner/miniforge3/conda-bld/cytoolz_1666829708557/work
+aiohttp==3.8.4
+aiosignal==1.3.1
+async-timeout==4.0.2
+attrs==23.1.0
+autopep8==1.6.0
+bitarray==2.7.3
+Bottleneck==1.3.5
+certifi==2023.5.7
+charset-normalizer==2.0.4
+cytoolz==0.12.0
 et-xmlfile==1.1.0
-eth-abi @ file:///home/conda/feedstock_root/build_artifacts/eth-abi_1679598323620/work
-eth-account @ file:///home/conda/feedstock_root/build_artifacts/eth-account_1682635474507/work
-eth-hash @ file:///home/conda/feedstock_root/build_artifacts/eth-hash_1668036841030/work
-eth-keyfile @ file:///home/conda/feedstock_root/build_artifacts/eth-keyfile_1677686073380/work
-eth-keys @ file:///home/conda/feedstock_root/build_artifacts/eth-keys_1678493914753/work
-eth-rlp @ file:///home/conda/feedstock_root/build_artifacts/eth-rlp_1643212579868/work
-eth-typing @ file:///home/conda/feedstock_root/build_artifacts/eth-typing_1678386483595/work
-eth-utils @ file:///Users/runner/miniforge3/conda-bld/eth-utils_1678300826308/work
-frozenlist @ file:///Users/runner/miniforge3/conda-bld/frozenlist_1667935707665/work
-hexbytes @ file:///home/conda/feedstock_root/build_artifacts/hexbytes_1663600986137/work
-idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1663625384323/work
-importlib-metadata @ file:///home/conda/feedstock_root/build_artifacts/importlib-metadata_1682176699712/work
-importlib-resources @ file:///home/conda/feedstock_root/build_artifacts/importlib_resources_1676919000169/work
-jsonschema @ file:///home/conda/feedstock_root/build_artifacts/jsonschema-meta_1669810440410/work
-lru-dict @ file:///Users/runner/miniforge3/conda-bld/lru-dict_1667062157381/work
+eth-abi==4.0.0
+eth-account==0.8.0
+eth-hash==0.5.1
+eth-keyfile==0.6.1
+eth-keys==0.4.0
+eth-rlp==0.3.0
+eth-typing==3.3.0
+eth-utils==2.1.0
+frozenlist==1.3.3
+hexbytes==0.3.0
+idna==3.4
+importlib-metadata==6.6.0
+importlib-resources==5.12.0
+jsonschema==4.17.3
+lru-dict==1.1.8
 mkl-fft==1.3.6
-mkl-random @ file:///Users/ec2-user/mkl/mkl_random_1682994911338/work
+mkl-random==1.2.2
 mkl-service==2.4.0
-multidict @ file:///Users/runner/miniforge3/conda-bld/multidict_1672339475162/work
-numexpr @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_1b50c1js9s/croot/numexpr_1683227065029/work
-numpy @ file:///Users/ec2-user/mkl/numpy_and_numpy_base_1682973769567/work
+multidict==6.0.4
+numexpr==2.8.4
+numpy==1.24.3
 openpyxl==3.0.10
 pandas==1.5.3
-parsimonious @ file:///home/conda/feedstock_root/build_artifacts/parsimonious_1662507967392/work
-pkgutil_resolve_name @ file:///home/conda/feedstock_root/build_artifacts/pkgutil-resolve-name_1633981968097/work
+parsimonious==0.9.0
+pip==23.0.1
+pkgutil_resolve_name==1.3.10
 protobuf==4.23.2
-pycodestyle @ file:///Users/ec2-user/ci_py311/pycodestyle_1678324331308/work
-pycryptodome @ file:///Users/runner/miniforge3/conda-bld/pycryptodome_1684532195930/work
-pyrsistent @ file:///Users/runner/miniforge3/conda-bld/pyrsistent_1672681602414/work
-PySocks @ file:///home/conda/feedstock_root/build_artifacts/pysocks_1661604839144/work
-python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
-pytz @ file:///Users/ec2-user/ci_py311/pytz_1678318034461/work
-regex @ file:///Users/runner/miniforge3/conda-bld/regex_1683147195735/work
-requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1684774241324/work
-rlp @ file:///home/conda/feedstock_root/build_artifacts/rlp_1639254711263/work
+pycodestyle==2.10.0
+pycryptodome==3.18.0
+pyrsistent==0.19.3
+PySocks==1.7.1
+python-dateutil==2.8.2
+pytz==2022.7
+regex==2023.5.5
+requests==2.31.0
+rlp==3.0.0
 setup-py-upgrade==1.3.0
-six @ file:///tmp/build/80754af9/six_1644875935023/work
-toml @ file:///tmp/build/80754af9/toml_1616166611790/work
-toolz @ file:///home/conda/feedstock_root/build_artifacts/toolz_1657485559105/work
-typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1685045523825/work
-urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1683161174614/work
-VOID @ file:///Users/drewskikatana/Documents/Programming/jiu_jistics
-web3 @ file:///Users/runner/miniforge3/conda-bld/web3_1683228430880/work
-websockets @ file:///Users/runner/miniforge3/conda-bld/websockets_1683550264809/work
-XlsxWriter @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_ffmq82fiox/croot/xlsxwriter_1685021134049/work
-yarl @ file:///Users/runner/miniforge3/conda-bld/yarl_1685191791125/work
-zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1677313463193/work
+setuptools==66.0.0
+six==1.16.0
+toml==0.10.2
+toolz==0.12.0
+typing_extensions==4.6.2
+urllib3==2.0.2
+VOID==1.0.0
+web3==6.3.0
+websockets==11.0.3
+wheel==0.38.4
+XlsxWriter==3.1.1
+yarl==1.9.2
+zipp==3.15.0
