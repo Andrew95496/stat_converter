@@ -1,13 +1,3 @@
-- ./Makefile:1:#TODO: Add venv
-
-- ./Makefile:2:#TODO: Add user input for venv
-
-- ./docs/dataflow.md:3: TODO: Add Public/Private
-
-- ./docs/project_structure:21:.rw-r--r--   597 drewskikatana  3 Jun 16:55 ├── TODO.md
-
-- ./scripts/todo.sh:1:grep -rn "TODO" ./* | sed 's/^/- /' | sed G > TODO.md | cat TODO.md
-
 - ./void/VOID.py:84:# TODO: parse and convert the 'Other Stats' column
 
 - ./void/configs/update_configs.py:8:# TODO: Turn into class
