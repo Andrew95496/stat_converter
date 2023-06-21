@@ -1,12 +1,10 @@
 - ./void/VOID.py:84:# TODO: parse and convert the 'Other Stats' column
 
-- ./void/configs/update_configs.py:8:# TODO: Turn into class
+- ./void/configs/update_configs.py:8:# TODO: revert default settings
 
-- ./void/configs/update_configs.py:9:# TODO: revert default settings
+- ./void/configs/update_configs.py:9:# TODO: What if import file is empty
 
-- ./void/configs/update_configs.py:10:# TODO: What if import file is empty
-
-- ./void/modules/statics.py:26:# TODO: ADD Positions and prefixes to applicable Stats
+- ./void/modules/statics.py:1:# TODO: add FT Forced Turtle
 
 - ./void/modules/error_check.py:5:# TODO BUG: (L)GPa <- (R)GP would be valid [NOT CORRECT] 
 
