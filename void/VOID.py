@@ -2,6 +2,7 @@ import modules
 import configs
 
 import os
+import pandas as pd
 
 # * Home directory path
 # print(os.path.expanduser('~'))
@@ -33,7 +34,7 @@ class VOID():
         self.tables[athlete] = (dataframe)
         return self.tables
     
-    def __parse__(self, athlete: str, dataframe: pd.Dataframe, opponent: str):
+    def __parse__(self, athlete: str, dataframe: pd.DataFrame, opponent: str):
         _athlete = athlete.replace('_', ' ')
         stats = modules.stat_type.StatType()
         stat_col = stats.assign_type(dataframe['Stats'], athlete, opponent)
@@ -41,7 +42,7 @@ class VOID():
         return self.parsed_stats.values()
 
 
-    def __convert__(self, stat_col: list, dataframe: pd.Dataframe, athlete: str, opponent: str):
+    def __convert__(self, stat_col: list, dataframe: pd.DataFrame, athlete: str, opponent: str):
         convert = modules.converter.Converter(stat_col)
         convert.convert(athlete, opponent)
         new_stat_col = convert.merge()
@@ -51,7 +52,7 @@ class VOID():
         new_dataframe = dataframe.iloc[0:, [2, 7, 0, 3, 4, 5, 6]]
         return new_dataframe
       
-    def __export__(self, df: pd.Dataframe, export_dir: str, opponent_name: str):
+    def __export__(self, df: pd.DataFrame, export_dir: str, opponent_name: str):
         df.to_excel(f'{export_dir}/{opponent_name}.xlsx')
 
     def void(self):
