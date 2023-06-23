@@ -1,2 +1,2 @@
 from .configs import Config
-from .update_configs import UpdateConfigs
+from .meta_configs import Configs

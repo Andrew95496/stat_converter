@@ -2,9 +2,9 @@ import os
 import configparser
 import json
 
-from .update_configs import UpdateConfigs
+from .meta_configs import Configs
 class Config():
-    UpdateConfigs.__update_config__()
+    Configs.__update__()
 
     config = configparser.ConfigParser()
     config.read(f'{os.getcwd()}/void/configs/configs.cfg')
