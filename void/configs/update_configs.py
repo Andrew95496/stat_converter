@@ -6,7 +6,7 @@ import json
 # print(os.path.expanduser('~'))
 
 # TODO: revert default settings
-# TODO: What if import file is empty
+# TODO: What if import dir is empty or doesn't exist
 
 class UpdateConfigs():
 
@@ -19,6 +19,12 @@ class UpdateConfigs():
         athlete_xlsx_file = [athlete.removesuffix('.xlsx') for athlete in temp]
         defaults = config['DEFAULTS']
         defaults['ATHLETES'] = json.dumps(athlete_xlsx_file)
+        if len(athlete_xlsx_file) == 0:
+            print('WARNING: import directory is empty')
         with open(f'{os.getcwd()}/void/configs/configs.cfg', 'w') as cfg:
             config.write(cfg)
+
+    @staticmethod
+    def __restore__():
+        pass
 
