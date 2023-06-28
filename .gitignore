@@ -6,6 +6,7 @@ __pycache__/
 void/.DS_Store
 # C extensions
 *.so
+*.xlsx
 
 # Distribution / packaging
 .Python
