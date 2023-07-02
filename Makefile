@@ -23,7 +23,6 @@ else
 .ONESHELL:
 
 .DEFAULT_GOAL := run
-
 #venv/bin/activate: requirements.txt
 #	VENV ?= $(shell bash -c 'read -p "venv name: " venv;')
 #	python3 -m venv VENV
