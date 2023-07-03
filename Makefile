@@ -32,7 +32,6 @@ else
 
 #venv: venv/bin/activate
 #	. .venv/bin/activate
-
 run: 
 	python3 void/VOID.py
 
